@@ -1,31 +1,26 @@
-import styled, { createGlobalStyle, keyframes } from 'styled-components'
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 export default createGlobalStyle`
     :root {
-        --color-primary: #09a274;
-        --color-secondary: #1cc2b8;
-        --color-tertiary: #42dcba;
+        --color-primary: #00A499;
+        --color-secondary: #2CD5C4;
+        --color-tertiary: #74D2E7;
     }   
 
-    * {
+    html, body {
         margin: 0;
         padding: 0;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    html {
-        box-sizing: border-box;
+        height: 100%;
+        background: var(--color-primary);
     }
 
     *,
     *:before,
     *:after {
-    box-sizing: inherit;
-    }
-
-    body {
-        width: 100%;
-        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Source Sans Pro', sans-serif;        
+        box-sizing: border-box;
     }
 
     ul {
@@ -47,7 +42,35 @@ export default createGlobalStyle`
     p {
         display: inline-block;
     }
-`
+
+    div, img, p, svg {
+        transition: all .3s;
+    }
+
+    .fontSizePrimary {
+        font-size: 16px;
+
+        @media (min-width: 576px) {
+            font-size: 24px;
+        }
+
+        @media (min-width: 768px) {
+            font-size: 32px;
+        }
+    }
+
+    .fontSizeSecondary {
+        font-size: 16px;
+   
+        @media (min-width: 576px) {
+            font-size: 20px;
+        }
+
+        @media (min-width: 768px) {
+            font-size: 24px;
+        }
+    }    
+`;
 
 export const animationSlideUp = keyframes`
   0% {
@@ -58,7 +81,7 @@ export const animationSlideUp = keyframes`
       opacity: 1;
       transform: translateY(0);
   }
-`
+`;
 
 export const animationSlideLeft = keyframes`
   0% {
@@ -69,7 +92,7 @@ export const animationSlideLeft = keyframes`
       opacity: 1;
       transform: translateX(0);
   }
-`
+`;
 
 export const animationSlideRight = keyframes`
   0% {
@@ -80,7 +103,7 @@ export const animationSlideRight = keyframes`
       opacity: 1;
       transform: translateX(0);
   }
-`
+`;
 
 export const fadeIn = keyframes`
   0% {
@@ -89,7 +112,7 @@ export const fadeIn = keyframes`
   100% {
       opacity: 1;
   }
-`
+`;
 
 export const fadeOut = keyframes`
   0% {
@@ -98,4 +121,4 @@ export const fadeOut = keyframes`
   100% {
       opacity: 0;
   }
-`
+`;
