@@ -58,9 +58,9 @@ export default class MyDocument extends Document {
           )}
           <meta charSet="utf-8" />
           <meta name="description" content="Agência Clínica" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-          <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+          <link rel={"preconnect"} href={"https://fonts.googleapis.com"} />
+          <link rel={"preconnect"} href={"https://fonts.gstatic.com"} />
+          <link href={"https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"} rel={"stylesheet"} />
           <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
           <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
           <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
