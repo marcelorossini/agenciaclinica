@@ -7,6 +7,7 @@ export const Grid = styled.div`
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: 1fr;
   align-items: center;
+  min-height: 100%;
   
   @media (min-width: 768px) {
     width: 100%;

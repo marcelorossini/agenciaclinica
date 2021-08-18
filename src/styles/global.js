@@ -11,7 +11,7 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         height: 100%;
-        background: var(--color-primary);
+        background: var(--color-primary);        
     }
 
     *,

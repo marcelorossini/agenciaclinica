@@ -10,7 +10,7 @@ import { Wrapper } from "../styles/index";
 export default function Index() {
   return (
     <>  
-      <Page backgroundColor="var(--color-primary)">
+<Page backgroundColor="var(--color-primary)">
         <Wrapper>
           <Home />
         </Wrapper>
@@ -29,15 +29,7 @@ export default function Index() {
         <Wrapper>
           <Contact />
         </Wrapper>
-      </Page>      
-      {/*
-      
-      <Page backgroundColor="var(--color-primary)">
-        <Wrapper>
-          <Home />
-        </Wrapper>
-      </Page>
-        */}
+      </Page>        
     </>
   );
 }
