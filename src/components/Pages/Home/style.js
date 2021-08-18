@@ -83,8 +83,4 @@ export const NavbarItem = styled.div`
   &:last-child {
     margin: 0;
   }
-
-  &:hover {
-    color: red;
-  }
 `;
