@@ -3,17 +3,17 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   width: 100%;
   min-height: 100%;
-  display: flex;  
+  display: flex;
 `;
 
 export const BackgroundItem = styled.div`
-  display: none;  
+  display: none;
 
   @media (min-width: 1280px) {
     display: block;
     flex: 1;
     height: 100%;
-    background: ${({ backgroundColor }) => backgroundColor && backgroundColor};    
+    background: ${({ backgroundColor }) => backgroundColor && backgroundColor};
   }
 `;
 
@@ -36,59 +36,46 @@ export const WrapperItem = styled.div`
   display: flex;
   align-items: center;
   justify-items: center;
-`
+`;
 
 export const Item = styled.div`
   max-width: 400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1px auto; 
-  gap: 12px; 
+  grid-template-rows: auto auto 1px auto;
+  gap: var(--size-padding-1x);
   align-items: center;
   justify-items: center;
   text-align: center;
   padding: 64px;
 
-  @media (min-width: 768px) {
-    grid-template-rows: 1fr auto 1px 1fr; 
+  @media (min-width: 992px) {
+    grid-template-rows: 1fr auto 1px 1fr;
   }
-  
-  
 `;
 
 export const Image = styled.img`
   height: 128px;
-
-  ${({ margin }) => margin && `
-    margin: ${margin};
-  `}
-
-   @media (min-width: 576px) {
-     align-self: end;
-     height: 156px;
-   }
-`
+  @media (min-width: 576px) {
+    align-self: end;
+    height: 156px;
+  }
+`;
 
 export const Divider = styled.div`
   width: 100%;
   height: 2px;
   background: #ffffff;
-`
+`;
 
-export const Title = styled.strong`  
+export const Title = styled.strong`
   color: #ffffff;
   display: block;
-  font-size: 20px;
-   
-   @media (min-width: 576px) {
-       font-size: 24px;
-   }
 
-   @media (min-width: 768px) {
-       font-size: 24px;
-       width: 200px;
-   }  
+  @media (min-width: 768px) {
+    width: 220px;
+  }
 `;
 
 export const Description = styled.p`
@@ -96,8 +83,8 @@ export const Description = styled.p`
   color: #ffffff;
   display: block;
   font-size: 16px;
-   
-   @media (min-width: 576px) {
-       font-size: 20px;
-   }     
+
+  @media (min-width: 576px) {
+    font-size: 20px;
+  }
 `;

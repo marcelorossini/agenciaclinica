@@ -18,12 +18,8 @@ export default function Home() {
       <Grid>
         <WrapperItem backgroundColor="#2ea498">
           <Item>
-            <Image
-              margin="0 0 0 10%"
-              src="/assets/services/dart.svg"
-              alt="logo"
-            />
-            <Title>As pessoas vão te encontrar</Title>
+            <Image src="/assets/details/dart.svg" alt="" />
+            <Title className="fontSizeSecondary">As pessoas vão te encontrar</Title>
             <Divider />
             <Description>
               Estratégias de Google ADS e Facebook ADS para que você apareça nas
@@ -31,10 +27,10 @@ export default function Home() {
             </Description>
           </Item>
         </WrapperItem>
-        <WrapperItem backgroundColor="#81c8d2">
+        <WrapperItem backgroundColor="#1cc2b8">
           <Item>
-            <Image src="/assets/services/heart.svg" alt="logo" />
-            <Title>Seu conteúdo irá gerar conexão</Title>
+            <Image src="/assets/details/heart.svg" alt="" />
+            <Title className="fontSizeSecondary">Seu conteúdo irá gerar conexão</Title>
             <Divider />
             <Description>
               Fazer posts manjados igual todo mundo não funciona mais. É preciso
@@ -42,10 +38,10 @@ export default function Home() {
             </Description>
           </Item>
         </WrapperItem>
-        <WrapperItem backgroundColor="#77c2bf">
+        <WrapperItem backgroundColor="#74d2e7">
           <Item>
-            <Image src="/assets/services/money.svg" alt="logo" />
-            <Title>Seu faturamento vai aumentar</Title>
+            <Image src="/assets/details/money.svg" alt="" />
+            <Title className="fontSizeSecondary">Seu faturamento vai aumentar</Title>
             <Divider />
             <Description>
               É um investimento no seu próprio negócio. Quanto mais pessoas você
@@ -54,7 +50,7 @@ export default function Home() {
           </Item>
         </WrapperItem>
       </Grid>
-      <BackgroundItem backgroundColor="#77c2bf" />
+      <BackgroundItem backgroundColor="#74d2e7" />
     </Wrapper>
   );
 }

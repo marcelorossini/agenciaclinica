@@ -12,16 +12,16 @@ export default function Index() {
       <Page backgroundColor="var(--color-primary)">
         <Home />
       </Page>
-      <Page id="servicos" backgroundColor="var(--color-secondary)">
+      <Page id="servicos">
         <Details />
       </Page>
       <Page id="clientes" backgroundColor="var(--color-tertiary)">
         <Services />
       </Page>
-      <Page id="clientes" backgroundColor="var(--color-tertiary)">
+      <Page id="clientes" backgroundColor="var(--color-secondary)">
         <Customers />
       </Page>
-      <Page id="contato" backgroundColor="var(--color-secondary)">
+      <Page id="contato" backgroundColor="var(--color-tertiary)">
         <Contact />
       </Page>
     </>

@@ -6,6 +6,7 @@ export default createGlobalStyle`
         --color-secondary: #1cc2b8;
         --color-tertiary: #2CD5C4;
         --size-max-width: 1280px;
+        --size-padding-1x: 20px;
     }   
 
     html, body {
@@ -69,11 +70,7 @@ export default createGlobalStyle`
     }
 
     .fontSizeSecondary {
-        font-size: 16px;
-   
-        @media (min-width: 576px) {
-            font-size: 20px;
-        }
+        font-size: 20px;
 
         @media (min-width: 768px) {
             font-size: 24px;
