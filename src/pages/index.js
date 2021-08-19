@@ -4,7 +4,7 @@ import Services from "../components/Pages/Services";
 import Contact from "../components/Pages/Contact";
 import Customers from "../components/Pages/Customers";
 
-import Page from "../components/Page";
+import Page from "../components/Helpers";
 
 export default function Index() {
   return (

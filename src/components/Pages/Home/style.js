@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 export const Background = styled.div`
   position: absolute;
@@ -15,9 +15,21 @@ export const Background = styled.div`
   opacity: .3;
 `
 
+export const onHoverItem = keyframes`
+  0% {
+    transform: translate(0px, 0px);
+  }  
+  50% {
+    transform: translate(-20%, 0px);
+  }  
+  100% {
+    transform: translate(0px, 0px);
+  }
+`
+
 export const Lines = styled.div`
   position: absolute;
-  width: 100%;
+  width: 140%;
   height: 100%;
   top: 0;
   left: 0;  
@@ -26,6 +38,7 @@ export const Lines = styled.div`
   background-repeat: no-repeat;
   z-index: 0;
   opacity: .08; 
+  animation: ${onHoverItem} 60s linear infinite;
 `
 
 
