@@ -15,7 +15,7 @@ export default function Index() {
       <Page id="servicos">
         <Details />
       </Page>
-      <Page id="clientes" backgroundColor="var(--color-tertiary)">
+      <Page id="clientes" backgroundColor="#ffffff">
         <Services />
       </Page>
       <Page id="clientes" backgroundColor="var(--color-secondary)">

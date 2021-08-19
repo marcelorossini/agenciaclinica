@@ -33,7 +33,6 @@ export const Item = styled.div`
 export const Image = styled.img`
   width: 90px;
   height: inherit;
-  color: #ffffff;
 
   @media (min-width: 576px) {
     width: 128px;
@@ -47,7 +46,7 @@ export const Image = styled.img`
 `;
 
 export const Label = styled.strong`
-  color: #ffffff;
+  color: #888888;
 
   @media (min-width: 768px) {
     width: 164px;
