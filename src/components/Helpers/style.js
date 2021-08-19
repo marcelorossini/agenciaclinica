@@ -14,3 +14,12 @@ export const Container = styled.section`
     }
   }
 `;
+
+export const Wrapper = styled.div`
+    width: 100%;
+    max-width: var(--size-max-width);
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 40px;
+`
+

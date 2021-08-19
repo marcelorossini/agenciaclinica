@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { Background, Lines, Grid, Navbar, NavbarItem, Logo, Footer } from "./style";
 
+import { Wrapper } from "../../Helpers/style";
+
 export default function Home() {
   return (
-    <>
+    <Wrapper>
       <Grid>
         <Navbar className="fontSizePrimary">
           <NavbarItem>
@@ -27,6 +29,6 @@ export default function Home() {
       </Grid>
       <Background />
       <Lines />
-    </>
+    </Wrapper>
   );
 }

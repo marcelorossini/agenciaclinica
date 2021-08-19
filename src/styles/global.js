@@ -3,8 +3,9 @@ import styled, { createGlobalStyle, keyframes } from "styled-components";
 export default createGlobalStyle`
     :root {
         --color-primary: #00A499;
-        --color-secondary: #2CD5C4;
-        --color-tertiary: #74D2E7;
+        --color-secondary: #1cc2b8;
+        --color-tertiary: #2CD5C4;
+        --size-max-width: 1280px;
     }   
 
     html, body {
@@ -48,15 +49,23 @@ export default createGlobalStyle`
     }
 
     .fontSizePrimary {
-        font-size: 16px;
+        font-size: 20px;
 
         @media (min-width: 576px) {
             font-size: 24px;
         }
 
         @media (min-width: 768px) {
-            font-size: 32px;
+            font-size: 28px;
         }
+
+        @media (min-width: 768px) {
+            font-size: 28px;
+        }        
+
+        @media (min-width: 1024px) {
+            font-size: 32px;
+        }        
     }
 
     .fontSizeSecondary {
@@ -69,6 +78,10 @@ export default createGlobalStyle`
         @media (min-width: 768px) {
             font-size: 24px;
         }
+
+        @media (min-width: 1024px) {
+            font-size: 28px;
+        }                
     }    
 `;
 
