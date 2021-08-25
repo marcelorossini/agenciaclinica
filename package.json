@@ -12,6 +12,7 @@
     "components": "^0.1.0",
     "next": "11.1.0",
     "react": "17.0.2",
+    "react-data-table-component": "^6.11.8",
     "react-dom": "17.0.2",
     "styled": "^1.0.0",
     "styled-components": "^5.3.0",

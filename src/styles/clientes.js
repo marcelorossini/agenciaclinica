@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 export const Grid = styled.div`
     width: 100%;
@@ -35,7 +35,31 @@ export const WrapperButtons = styled.div`
     flex-direction: column;
 `
 
-export const Button = styled.button`
+export const onHoverItem = keyframes`
+  0% {
+    transform: scale(1);
+  }  
+  30% {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px 0px rgba(255,255,255,0.10);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  50% {
+    box-shadow: 0px 0px 80px 0px rgba(255,255,255,0.10);
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 20px 0px rgba(255,255,255,0.10);
+  }
+  80% {
+    transform: scale(1);
+  }    
+`
+
+export const Button = styled.a`
     flex: 1;
     width: 100%;
     background: #ffffff;
@@ -45,9 +69,15 @@ export const Button = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-
+    text-decoration: none;
+    color: #000000;
+    
     &:last-child {
         margin-bottom: 0px;
+    }
+
+    &:hover {
+        animation: ${onHoverItem} 1.2s linear infinite;
     }
 
     & > svg {
