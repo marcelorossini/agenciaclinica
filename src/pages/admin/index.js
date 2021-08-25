@@ -4,10 +4,10 @@ import { Wrapper, Box, Button } from "../../styles/admin";
 const Admin = () => {
   return (
     <Wrapper>
-        <Box>
-            <Link href="/admin/cadastro/clientes">Clientes</Link>
-            <Link href="/admin/logout">Sair</Link>
-        </Box>
+      <Box>
+        <Link href="/admin/cadastro/clientes">Clientes</Link>
+        <Link href="/admin/logout">Sair</Link>
+      </Box>
     </Wrapper>
   );
 };

@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { Wrapper, Box, Button } from "../../styles/admin";
 
 const Login = () => {
-    const router = useRouter()
+  const router = useRouter();
   const handleLogin = () => {
-    router.replace('/admin')
+    router.replace("/admin");
   };
 
   return (
