@@ -6,7 +6,17 @@ export const Container = styled.section`
   min-height: 100vh;
   /* mobile viewport bug fix */
   display: flex;
-  background: ${({ backgroundColor }) => backgroundColor && backgroundColor};
+
+  ${({ backgroundColor }) => backgroundColor && `
+    background: ${backgroundColor};
+  `}
+
+  ${({ backgroundImage }) => backgroundImage && `
+    background-image: url(${backgroundImage});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+  `}
 
   @media not all and (min-resolution: .001dpcm) {
     @supports (-webkit-appearance:none) and (stroke-color: transparent) {
