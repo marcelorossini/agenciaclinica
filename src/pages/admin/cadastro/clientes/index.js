@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import DataTable from "react-data-table-component";
 import api from "../../../../services/api";
 
+import Layout from "../../../../components/Layout";
+import Datatable from "../../../../components/Helpers/Datatable";
+
 const Clientes = () => {
-  const router = useRouter();
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -20,20 +20,19 @@ const Clientes = () => {
       name: "Cliente",
       selector: (row) => row.name,
     },
+    {
+      name: "Exibe na página inicial?",
+      selector: (row) => row.name,
+    },    
   ];
 
-  const handleRowClick = ({ id }) => {
-    router.push(`/admin/cadastro/clientes/${id}`);
-  };
-
   return (
-    <>
-      <DataTable
+    <Layout title="Clientes">
+      <Datatable
         columns={columns}
         data={data}
-        onRowClicked={(data) => handleRowClick(data)}
       />
-    </>
+    </Layout>
   );
 };
 

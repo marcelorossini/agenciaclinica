@@ -5,6 +5,7 @@ export default createGlobalStyle`
         --color-primary: #00A499;
         --color-secondary: #1cc2b8;
         --color-tertiary: #2CD5C4;
+        --color-text-primary: #353b48;
         --size-max-width: 1280px;
         --size-padding-1x: 20px;
     }   
@@ -12,8 +13,7 @@ export default createGlobalStyle`
     html, body {
         margin: 0;
         padding: 0;
-        height: 100%;
-        background: var(--color-primary);        
+        height: 100%;  
     }
 
     *,
