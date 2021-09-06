@@ -75,6 +75,7 @@ export const Button = styled.button`
 `;
 
 export const Form = styled.form`
+  width: 100%;
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
@@ -87,11 +88,10 @@ export const GroupInput = styled.div`
   flex-direction: column;
   margin-bottom: 12px;
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: center;
-
+  @media (min-width: 768px) {      
     ${({ labelSize }) => labelSize && `    
+      align-items: center;
+      flex-direction: row;
       & > *:first-child {
         width: ${labelSize};
       }
