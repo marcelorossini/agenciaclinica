@@ -4,7 +4,7 @@ export const APP_DATA = "agencia-clinica-data";
 
 export const login = ({ token }) => {
   // Seta cookie
-  Cookie.set(APP_DATA, token, { expires: 30 });
+  Cookie.set(APP_DATA, token, { expires: 1 });
 };
 
 export const logout = () => {

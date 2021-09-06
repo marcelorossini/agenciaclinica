@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import api from "../../../../services/api";
+import withAuth from "../../../../utils/withAuth";
 
 import Layout from "../../../../components/Layout";
 import { Form, Input, Button, Label, GroupInput } from "../../../../styles/admin";
@@ -100,4 +101,4 @@ const Cliente = () => {
   );
 };
 
-export default Cliente;
+export default withAuth(Cliente);

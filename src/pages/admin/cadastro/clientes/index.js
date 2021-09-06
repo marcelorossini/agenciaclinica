@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "../../../../services/api";
+import withAuth from "../../../../utils/withAuth";
 
 import Layout from "../../../../components/Layout";
 import Datatable from "../../../../components/Helpers/Datatable";
@@ -36,4 +37,4 @@ const Clientes = () => {
   );
 };
 
-export default Clientes;
+export default withAuth(Clientes);
