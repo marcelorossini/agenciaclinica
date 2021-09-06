@@ -22,7 +22,7 @@ export const Error = styled.p`
 
 export const Button = styled.button`
   border-radius: 5px;
-  box-shadow: 1px 1px 3px #1f1f423d;
+  box-shadow: 1px 1px 3px #00000010;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,16 +33,40 @@ export const Button = styled.button`
   margin: ${({ margin }) => margin || "0"};
   font-size: 16px;
   font-weight: bold;
-  color: #ffffff;
-
+  
   @media (min-width: 768px) {
     width: ${({ widthDesktop }) => widthDesktop || "100%"};
   }
+  
+  ${({ secondary, danger}) => {
+    let css = ''
+    if (secondary) {
+      css = `
+        background: var(--color-grey-light);
+        color: var(--color-blue-dark) !important;
+        &:hover {
+          background: var(--color-grey-light-hover);
+        }    
+      `
+    } else if (danger) {
+      css = `
+        background: var(--color-red-mild);
+        color: #fff;
+        &:hover {
+          background: var(--color-red-error);
+        }  
+      `
+    } else {
+      css = `  
+        color: #ffffff;
+        background: var(--color-primary);
+        &:hover {
+          background: #00948a;
+        }`
+    }
+    return css
+  }}
 
-  background: var(--color-primary);
-  &:hover {
-    background: var(--color-grey-light-hover);
-  }
   &:disabled,
   &[disabled] {
     background: #fafafa;
@@ -72,6 +96,15 @@ export const GroupInput = styled.div`
         width: ${labelSize};
       }
     `};
+
+    ${({ gap }) => gap && `    
+      & > * {
+        margin-right: ${gap};
+      }
+      & > *:last-child {
+        margin-right: 0;
+      }
+    `};    
   }
 `
 
@@ -80,7 +113,7 @@ export const Input = styled.input`
   height: ${({ height }) => height || "30px"};
   font-size: ${({ fontSize }) => fontSize || "14px"};
   text-align: ${({ textAlign }) => textAlign || "left"};
-  padding: 16px;
+  padding: 0 10px;
   border: ${({ alternative }) => alternative ? "#ffffff" : "1px solid var(--color-primary)"};
   -webkit-appearance: none;
   border-radius: 5px;
@@ -90,6 +123,53 @@ export const Input = styled.input`
   &:not([data-error=""])::placeholder {
     color: #7f8c8d;
   }
+  ${({ secondary }) =>
+    secondary &&
+    `
+    border: none !important;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0px;
+    height: auto;
+  `}
+  ${({ error }) =>
+    error
+    ? `    
+      border: 1px solid var(--color-red-mild) ;
+    `
+    : `
+      &:focus {
+        border: 1px solid var(--color-primary);
+      }
+      &:hover {
+        border: 1px solid var(--color-primary);
+      }
+    `};
+`;
+
+export const CheckBox = styled.div`
+  cursor: pointer;
+  & > label + input {
+    padding-right: 10px;
+  }
+  & > input + label {
+    padding-left: 10px;  
+  }
+`;
+
+export const Select = styled.select`
+  width: ${({ width }) => width || "100%"};
+  height: ${({ height }) => height || "30px"};
+  font-size: ${({ fontSize }) => fontSize || "14px"};
+  text-align: ${({ textAlign }) => textAlign || "left"};
+  padding: 0 10px;
+  border: ${({ alternative }) => alternative ? "#ffffff" : "1px solid var(--color-primary)"};
+  -webkit-appearance: none;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s;
+
+
   ${({ secondary }) =>
     secondary &&
     `

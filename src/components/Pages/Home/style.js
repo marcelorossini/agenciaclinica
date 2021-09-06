@@ -1,38 +1,38 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Background = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: all .3s;
+  transition: all 0.3s;
   top: 0;
-  left: 0;  
+  left: 0;
   background: url("/assets/background.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: left;
   z-index: 0;
-  opacity: .3;
-`
+  opacity: 0.3;
+`;
 
 export const Lines = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  left: 0;  
+  left: 0;
   background: url("/assets/lines2.svg");
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 0;
-  opacity: .08; 
-`
+  opacity: 0.08;
+`;
 
 export const Grid = styled.div`
   position: relative;
   min-height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
   z-index: 1000;
 `;
 
@@ -43,7 +43,7 @@ export const Logo = styled.div`
 
   & > img {
     width: 100%;
-    max-width: 256px;    
+    max-width: 256px;
   }
 
   @media (min-width: 576px) {
@@ -81,5 +81,46 @@ export const NavbarItem = styled.div`
   margin: 0 24px 0 0;
   &:last-child {
     margin: 0;
+  }
+`;
+
+export const animationButton = keyframes`
+  0% {
+    transform: scale(1);
+  }  
+  30% {
+    transform: scale(1.05);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(1);
+  }    
+`;
+
+export const Button = styled.div`
+  width: 100%;
+  max-width: 440px;
+  justify-self: center;
+  padding: 12px;
+  text-align: center;
+  color: #ffffff;
+  background: #01a7c1;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  animation: ${animationButton} 2s linear infinite;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    padding: 8px;
+    font-size: 20px;
   }
 `;

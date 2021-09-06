@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router'
 
+import { logout } from '../../services/auth'
+
 const Logout = () => {
   const router = useRouter()
 
   useEffect(() => {
-      router.push('/')
+      logout()
+      router.replace('/')
   },[])
 
   return <></>;

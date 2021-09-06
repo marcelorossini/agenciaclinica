@@ -1,13 +1,20 @@
 import styled from "styled-components";
 
 export const Grid = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`
+
+export const List = styled.div`
   width: fit-content;
+  height: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: 1fr;
   align-items: center;
-  min-height: 100%;
 
   @media (min-width: 768px) {
     width: 100%;
@@ -31,25 +38,37 @@ export const Item = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 90px;
+  width: 64px;
   height: inherit;
 
   @media (min-width: 576px) {
-    width: 128px;
+    width: 90px;
     height: inherit;
   }
 
   @media (min-width: 768px) {
     width: inherit;
-    height: 148px;
+    height: 128px;
   }
 `;
 
 export const Label = styled.strong`
   color: #888888;
-
+  
   @media (min-width: 768px) {
     width: 164px;
     text-align: center;
   }
 `;
+
+export const Title = styled.div`
+  padding-bottom: 12px;
+  color: #00A499;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  @media (min-width: 768px) {
+    font-size: 40px;
+    padding-bottom: 0px;
+  }
+`

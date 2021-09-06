@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Background, Lines, Grid, Navbar, NavbarItem, Logo, Footer } from "./style";
+import { Background, Lines, Grid, Navbar, NavbarItem, Logo, Footer, Button } from "./style";
 
 import { Wrapper } from "../../Helpers/style";
 
@@ -22,6 +22,8 @@ export default function Home() {
         <Logo>
           <img src="/assets/logo.svg" alt="logo" />
         </Logo>
+        
+        <Button>Faça aqui seu pré-cadastro para o lançamento!</Button>
 
         <Footer className="fontSizeSecondary">
           Agência especializada em profissionais da saúde

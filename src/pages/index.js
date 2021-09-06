@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import Home from "../components/Pages/Home";
 import Details from "../components/Pages/Details";
 import Services from "../components/Pages/Services";
@@ -9,6 +11,9 @@ import Page from "../components/Helpers";
 export default function Index() {
   return (
     <>
+      <Head>
+        <title>Agência Clinica</title>
+      </Head>
       <Page backgroundColor="var(--color-primary)">
         <Home />
       </Page>

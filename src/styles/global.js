@@ -6,6 +6,12 @@ export default createGlobalStyle`
         --color-secondary: #1cc2b8;
         --color-tertiary: #2CD5C4;
         --color-text-primary: #353b48;
+        --color-red-mild: #e74c3c;
+        --color-red-error: #801616;
+        --color-grey-mild: #808084;
+        --color-grey-dark: #444447;     
+        --color-grey-light: #e9e9e9;   
+        --color-grey-light-hover: #d4d4d4;
         --size-max-width: 1280px;
         --size-padding-1x: 20px;
     }   

@@ -10,6 +10,8 @@ export const Container = styled.div`
   padding: 0 24px;
   align-items: center;
   color: var(--color-text-primary);
+  position: relative;
+  z-index: 1000;
 
   & > svg {
       height: 18px;

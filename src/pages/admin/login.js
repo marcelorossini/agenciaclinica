@@ -2,9 +2,11 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 
-import { Button, Form, Input, Error, GroupInput } from "../../styles/admin";
+import { Button, Form, Input, Error, GroupInput } from "../../styles/admin/index";
 import { Wrapper, Box, Logo } from "../../styles/admin/login";
+
 import api from "../../services/api";
+import withAuth from "../../utils/withAuth";
 
 import { login } from "../../services/auth";
 
@@ -39,6 +41,7 @@ const Login = () => {
               height="50px"
               type="text"
               placeholder="Usuário"
+              alternative
               {...register("email")}
             />
           </GroupInput>
@@ -47,6 +50,7 @@ const Login = () => {
               height="50px"
               type="password"
               placeholder="Senha"
+              alternative
               {...register("password")}
             />
           </GroupInput>
@@ -58,4 +62,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default withAuth(Login, false);

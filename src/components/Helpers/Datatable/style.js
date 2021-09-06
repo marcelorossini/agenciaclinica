@@ -14,3 +14,8 @@ export const Container = styled(DataTable)`
     color: var(--color-text-primary);
   }
 `;
+
+export const Empty = styled.div`
+  min-height: 100px;
+  cursor: pointer;
+`

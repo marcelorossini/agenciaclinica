@@ -1,19 +1,19 @@
 import { useRouter } from "next/router";
 
-import { Container } from './style'
+import { Container, Empty } from './style'
 
 const Datatable = props => {
   const router = useRouter();  
 
-  const handleRowClick = ({ id }) => {
-    router.push(`${router.pathname}/${id}`);
+  const handleRowClick = (id = "") => {
+    router.push(`${router.pathname}/${id || 'novo'}`);
   };
 
   return (
       <Container
         noHeader={true}
-        noDataComponent="Nenhum registro"
-        onRowClicked={(data) => handleRowClick(data)}
+        noDataComponent={<Empty onClick={() => handleRowClick()}>Nenhum registro, clique aqui para adicionar</Empty>}
+        onRowClicked={(data) => handleRowClick(data.id)}
         {...props}        
       />
   );

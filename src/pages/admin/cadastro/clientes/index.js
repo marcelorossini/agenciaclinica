@@ -4,6 +4,7 @@ import withAuth from "../../../../utils/withAuth";
 
 import Layout from "../../../../components/Layout";
 import Datatable from "../../../../components/Helpers/Datatable";
+import { Button } from "../../../../styles/admin/index";
 
 const Clientes = () => {
   const [data, setData] = useState([]);
@@ -33,6 +34,7 @@ const Clientes = () => {
         columns={columns}
         data={data}
       />
+      <Button type="submit" widthDesktop="200px">Adicionar</Button>
     </Layout>
   );
 };

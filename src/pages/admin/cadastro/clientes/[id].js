@@ -5,7 +5,7 @@ import api from "../../../../services/api";
 import withAuth from "../../../../utils/withAuth";
 
 import Layout from "../../../../components/Layout";
-import { Form, Input, Button, Label, GroupInput } from "../../../../styles/admin";
+import { Form, Input, Button, Label, GroupInput, Select, CheckBox } from "../../../../styles/admin/index";
 
 const Cliente = () => {
   const router = useRouter();
@@ -52,6 +52,13 @@ const Cliente = () => {
       <Form onSubmit={handleSubmit(onSubmit)}>
         {errors.name && <span>This field is required</span>}
         <GroupInput labelSize="100px">
+          <Label>Empresa:</Label>
+          <Select defaultValue="agencia" {...register("company")}>
+            <option value="agencia">Agência Clínica</option>
+            <option value="plim">Plim Soluções Criativas</option>
+          </Select>
+        </GroupInput>        
+        <GroupInput labelSize="100px">
           <Label>Nome:</Label>
           <Input type="text" {...register("name")} />
         </GroupInput>
@@ -95,7 +102,26 @@ const Cliente = () => {
           <Label>Youtube:</Label>
           <Input type="text" {...register("youtube")} />
         </GroupInput>
-        <Button type="submit" widthDesktop="240px">Salvar</Button>
+        <GroupInput labelSize="100px">
+          <Label htmlFor="profile_image">Foto perfil:</Label>
+          <input type="file" id="profile_image" name="profile_image" accept="image/png, image/jpeg"  {...register("profile_image")} />
+        </GroupInput>
+        <GroupInput labelSize="100px">
+          <Label htmlFor="background_image">Foto fundo:</Label>
+          <input type="file" id="background_image" name="background_image" accept="image/png, image/jpeg"  {...register("background_image")} />
+        </GroupInput>
+        <GroupInput labelSize="100px">
+          <Label>Opções:</Label>
+          <CheckBox>
+            <input type="checkbox" id="show" {...register("show")} />
+            <Label htmlFor="show">Exibir na home?</Label>
+          </CheckBox>
+        </GroupInput>    
+        <GroupInput gap="12px">
+          <Button type="submit" widthDesktop="200px">Salvar</Button>
+          <Button type="submit" widthDesktop="200px" danger>Excluir</Button>
+          <Button type="submit" widthDesktop="200px" secondary>Visualizar</Button>
+        </GroupInput>
       </Form>
     </Layout>
   );
