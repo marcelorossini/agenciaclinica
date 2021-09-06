@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import api from "../../../../services/api";
 import withAuth from "../../../../utils/withAuth";
 
@@ -24,17 +25,18 @@ const Clientes = () => {
     },
     {
       name: "Exibe na página inicial?",
-      selector: (row) => row.name,
-    },    
+      selector: (row) => row.show ? 'Sim' : 'Não',
+    },
   ];
 
   return (
     <Layout title="Clientes">
-      <Datatable
-        columns={columns}
-        data={data}
-      />
-      <Button type="submit" widthDesktop="200px">Adicionar</Button>
+      <Datatable columns={columns} data={data} />
+      <Link href="/admin/cadastro/clientes/novo">
+        <Button type="submit" widthDesktop="200px">
+          Adicionar
+        </Button>
+      </Link>
     </Layout>
   );
 };

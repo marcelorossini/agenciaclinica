@@ -1,4 +1,5 @@
 import styled, { keyframes, css } from 'styled-components'
+import { animationSlideUp } from '../../../styles/global'
 
 import { Close } from '@styled-icons/ionicons-outline'
 
@@ -54,40 +55,21 @@ export const Container = styled.div`
   }}
 `
 
-export const animationSlideUp = keyframes`
-  0% {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }
-`
-
 export const Wrapper = styled.div`
-  display: grid;
-  grid-template-rows: 56px 1fr;
   width: 100%;
-  height: 100%;
+  margin: 24px;
+  padding: 0 16px 16px 16px;
+  max-width: 400px;
   background: #fff;
   box-shadow: 0px 0px 12px 6px #00000010;
   border-radius: 5px;
   position: relative;
   z-index: 1200;
-
   ${({ active }) =>
     active &&
     css`
       animation: ${animationSlideUp} 0.4s ease;
     `}
-
-  @media (min-width: 768px) {
-    margin: 24px;
-    height: auto;
-    max-width: ${({ maxWidth }) => maxWidth || '600px'};
-    max-height: 80%;
-  }
 `
 
 export const Header = styled.div`
@@ -95,19 +77,23 @@ export const Header = styled.div`
   height: 56px;
   align-items: center;
   border-bottom: 1px solid var(--color-grey-light);
-
-  @media (min-width: 768px) {
-    margin: 0 12px;
-  }
 `
 
 export const Main = styled.div`
-  flex: auto;
-  overflow-y: auto;
-  min-height: 100px;
+  min-height: 40px;
   font-size: 14px;
-  padding: 12px;
+  padding: 12px 0;
+  text-align: center;
   color: var(--color-text-primary);
+`
+
+export const Footer = styled.div`
+  display: flex;
+  width: calc(100% + 12px);
+  margin: -12px 0 0 -12px;
+  & > * {
+    margin: 12px 0 0 12px !important;
+  }
 `
 
 export const Title = styled.div`

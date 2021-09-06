@@ -124,3 +124,14 @@ export const Button = styled.div`
     font-size: 20px;
   }
 `;
+
+export const TextModal = styled.div`
+  padding-bottom: 20px;
+`
+
+export const InformationTextModal = styled.div`
+  width: 100%;
+  align-self: flex-start;
+  font-size: 14px;
+  padding-bottom: 10px;
+`

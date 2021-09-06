@@ -19,7 +19,6 @@ export const Error = styled.p`
   color: #ffffff;
 `;
 
-
 export const Button = styled.button`
   border-radius: 5px;
   box-shadow: 1px 1px 3px #00000010;
@@ -33,13 +32,13 @@ export const Button = styled.button`
   margin: ${({ margin }) => margin || "0"};
   font-size: 16px;
   font-weight: bold;
-  
+
   @media (min-width: 768px) {
     width: ${({ widthDesktop }) => widthDesktop || "100%"};
   }
-  
-  ${({ secondary, danger}) => {
-    let css = ''
+
+  ${({ secondary, danger }) => {
+    let css = "";
     if (secondary) {
       css = `
         background: var(--color-grey-light);
@@ -47,7 +46,7 @@ export const Button = styled.button`
         &:hover {
           background: var(--color-grey-light-hover);
         }    
-      `
+      `;
     } else if (danger) {
       css = `
         background: var(--color-red-mild);
@@ -55,22 +54,24 @@ export const Button = styled.button`
         &:hover {
           background: var(--color-red-error);
         }  
-      `
+      `;
     } else {
       css = `  
         color: #ffffff;
         background: var(--color-primary);
         &:hover {
           background: #00948a;
-        }`
+        }`;
     }
-    return css
+    return css;
   }}
 
   &:disabled,
   &[disabled] {
     background: #fafafa;
     color: #79778b !important;
+    cursor: not-allowed;
+    pointer-events: all !important;
   }
 `;
 
@@ -88,25 +89,34 @@ export const GroupInput = styled.div`
   flex-direction: column;
   margin-bottom: 12px;
 
-  @media (min-width: 768px) {      
-    ${({ labelSize }) => labelSize && `    
+  @media (min-width: 768px) {
+    ${({ labelSize }) =>
+      labelSize &&
+      `    
       align-items: center;
       flex-direction: row;
       & > *:first-child {
         width: ${labelSize};
       }
     `};
+  }
+`;
 
-    ${({ gap }) => gap && `    
+export const GroupButtons = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  ${({ gap }) =>
+    gap &&
+    `    
       & > * {
         margin-right: ${gap};
       }
       & > *:last-child {
         margin-right: 0;
       }
-    `};    
-  }
-`
+    `};
+`;
 
 export const Input = styled.input`
   width: ${({ width }) => width || "100%"};
@@ -114,7 +124,8 @@ export const Input = styled.input`
   font-size: ${({ fontSize }) => fontSize || "14px"};
   text-align: ${({ textAlign }) => textAlign || "left"};
   padding: 0 10px;
-  border: ${({ alternative }) => alternative ? "#ffffff" : "1px solid var(--color-primary)"};
+  border: ${({ alternative }) =>
+    alternative ? "#ffffff" : "1px solid var(--color-primary)"};
   -webkit-appearance: none;
   border-radius: 5px;
   outline: none;
@@ -134,10 +145,10 @@ export const Input = styled.input`
   `}
   ${({ error }) =>
     error
-    ? `    
+      ? `    
       border: 1px solid var(--color-red-mild) ;
     `
-    : `
+      : `
       &:focus {
         border: 1px solid var(--color-primary);
       }
@@ -153,7 +164,7 @@ export const CheckBox = styled.div`
     padding-right: 10px;
   }
   & > input + label {
-    padding-left: 10px;  
+    padding-left: 10px;
   }
 `;
 
@@ -163,12 +174,12 @@ export const Select = styled.select`
   font-size: ${({ fontSize }) => fontSize || "14px"};
   text-align: ${({ textAlign }) => textAlign || "left"};
   padding: 0 10px;
-  border: ${({ alternative }) => alternative ? "#ffffff" : "1px solid var(--color-primary)"};
+  border: ${({ alternative }) =>
+    alternative ? "#ffffff" : "1px solid var(--color-primary)"};
   -webkit-appearance: none;
   border-radius: 5px;
   outline: none;
   transition: all 0.3s;
-
 
   ${({ secondary }) =>
     secondary &&
@@ -181,10 +192,10 @@ export const Select = styled.select`
   `}
   ${({ error }) =>
     error
-    ? `    
+      ? `    
       border: 1px solid var(--color-red-mild) ;
     `
-    : `
+      : `
       &:focus {
         border: 1px solid var(--color-primary);
       }

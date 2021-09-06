@@ -9,11 +9,14 @@ import {
   Logo,
   Footer,
   Button,
+  TextModal,
+  InformationTextModal
 } from "./style";
 
 import { Button as ButtonModal } from "../../../styles/admin/index";
 import { Wrapper } from "../../Helpers/style";
-import { showModal } from "../../Helpers/Modal";
+import { showModal, hideModal } from "../../Helpers/Modal";
+import { alertDialog } from "../../Helpers/Alert";
 import { useForm } from "react-hook-form";
 
 import {
@@ -30,7 +33,7 @@ export default function Home() {
     showModal({
       title: "Pré-Cadastro",
       component: <Modal />,
-      maxWidth: "400px",
+      maxWidth: "480px",
     });
   };
 
@@ -76,15 +79,17 @@ function Modal() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    let response;
-    if (id === "novo") response = await api.post(`/customer`, data);
-    else {
-      response = await api.put(`/customer/${id}`, data);
-    }
-    router.push("/admin/cadastro/clientes");
+    hideModal()
+    alertDialog({
+      type: 'Alert',
+      title: 'Prontinho!',
+      message: 'Aguarde nosso contato!'
+    })
   };
 
   return (
+    <>
+    <TextModal>Se inscreva sem compromisso e garanta uma sessão fotográfica + 15% de desconto caso deseje fechar seu pacote de marketing digital após receber seu orçamento, as vagas são limitadas!</TextModal>
     <Form onSubmit={handleSubmit(onSubmit)}>
       <GroupInput>
         <Label>Nome:</Label>
@@ -98,7 +103,9 @@ function Modal() {
         <Label>Email:</Label>
         <Input type="text" height="38px" {...register("name")} />
       </GroupInput>
+      <InformationTextModal>*Válido para os 10 primeiros clientes que fecharem contrato com a agência.</InformationTextModal>
       <ButtonModal>Enviar</ButtonModal>
     </Form>
+    </>
   );
 }
