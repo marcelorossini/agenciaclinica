@@ -203,7 +203,7 @@ export const DragAndDropUploaderArea = props => {
 }
 
 export const DragTeste = props => {
-  const { callbackUploadSuccess, callbackUploadPreview, openFileDialog, showLoading, showAlert, ...restOfProps } = props
+  const { callbackUploadSuccess, callbackUploadPreview, openFileDialog, showLoading, showAlert, options, ...restOfProps } = props
   const [isLoading, setIsLoading] = useState(false)
   const refDropzone = useRef()
 
@@ -254,12 +254,12 @@ export const DragTeste = props => {
       // Cria form data com o arquivo a ser enviado
       const formData = new FormData()
       formData.append('file', file[0])
+      if (options) formData.append('options', JSON.stringify(options))
 
       // Tenta enviar arquivo
       const response = await api.post('upload', formData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
-          'File-Options': '{ "compress": true }'
+          'Content-Type': 'multipart/form-data'
         },
         cancelToken: handleAxiosCancelToken.token,
         timeout: 600000

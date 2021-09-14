@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
+export const Container = styled.div`
   width: 100%;
   //min-height: ${({ viewHeight }) => viewHeight ? `calc(${viewHeight}px * 100)` : "100vh"};
   min-height: 100vh;

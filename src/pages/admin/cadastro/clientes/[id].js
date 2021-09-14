@@ -18,6 +18,8 @@ import {
 } from "../../../../styles/admin/index";
 import { DragTeste } from "../../../../components/Helpers/Uploader";
 
+import { CloudUpload } from "@styled-icons/bootstrap";
+
 const Cliente = () => {
   const router = useRouter();
   const [title, setTitle] = useState("");
@@ -46,19 +48,38 @@ const Cliente = () => {
       Object.keys(data).forEach((item) => {
         setValue(item, data[item]);
       });
+
+      // Preenche imagens
+      setImages({
+        profileImage: data.profile_image,
+        backgroundImage: data.background_image,
+      });
     };
     handle();
   }, [id]);
 
   const handleOnSubmit = async (data) => {
-    const { profile_image, background_image, ...restOfData } = data;
-    let response;
-    if (id === "novo") response = await api.post(`/customer`, restOfData);
-    else {
-      response = await api.put(`/customer/${id}`, restOfData);
+    try {
+      let auxData = data;
+      // Imagem de perfil
+      if (images.profileImage) {
+        auxData.profile_image = images.profileImage;
+      }
+      // Imagem fundo
+      if (images.backgroundImage) {
+        auxData.background_image = images.backgroundImage;
+      }
+  
+      let response;
+      if (id === "novo") response = await api.post(`/customer`, auxData);
+      else {
+        response = await api.put(`/customer/${id}`, auxData);
+      }
+  
+      router.push('/admin/cadastro/clientes') 
+    } catch (error) {
+      alert('Erro, tente novamente')
     }
-
-    //router.push('/admin/cadastro/clientes')
   };
 
   const handleOnDelete = () => {
@@ -99,70 +120,88 @@ const Cliente = () => {
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Url:</Label>
-          <Input type="text" {...register("url")} />
+          <Input {...register("url")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Nome:</Label>
-          <Input type="text" {...register("name")} />
+          <Input {...register("name")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Descrição:</Label>
-          <Input type="text" {...register("description")} />
+          <Input {...register("description")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Telefone:</Label>
-          <Input type="text" {...register("phone")} />
+          <Input {...register("phone")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Site:</Label>
-          <Input type="text" {...register("website")} />
+          <Input {...register("website")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Endereço:</Label>
-          <Input type="text" {...register("address")} />
+          <Input {...register("address")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Whatsapp:</Label>
-          <Input type="text" {...register("whatsapp")} />
+          <Input {...register("whatsapp")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Whatsapp2:</Label>
-          <Input type="text" {...register("whatsapp2")} />
+          <Input {...register("whatsapp2")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Facebook:</Label>
-          <Input type="text" {...register("facebook")} />
+          <Input {...register("facebook")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Instagram:</Label>
-          <Input type="text" {...register("instagram")} />
+          <Input {...register("instagram")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>LinkedIn:</Label>
-          <Input type="text" {...register("linkedin")} />
+          <Input {...register("linkedin")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Youtube:</Label>
-          <Input type="text" {...register("youtube")} />
+          <Input {...register("youtube")} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label htmlFor="profile_image">Foto perfil:</Label>
-          <input
-            type="file"
-            id="profile_image"
-            name="profile_image"
-            accept="image/png, image/jpeg"
-            {...register("profile_image")}
-          />
+          <DragTeste
+            showLoading={true}
+            callbackUploadPreview={(data) =>
+              setImages((state) => ({ ...state, profileImage: data.url }))
+            }
+            callbackUploadSuccess={(data) =>
+              setImages((state) => ({ ...state, profileImage: data.url }))
+            }
+            options={{ size: 1024 }}
+          >
+            <img
+              src={images.profileImage || "/assets/upload.png"}
+              alt=""
+              width="256px"
+            />
+          </DragTeste>
+          {images.profileImage && images.profileImage.url}
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Foto fundo:</Label>
           <DragTeste
             showLoading={true}
-            callbackUploadPreview={(data) => setImages(state => ({ ...state, backgroundImage: data}))}>
+            callbackUploadPreview={(data) =>
+              setImages((state) => ({ ...state, backgroundImage: data.url }))
+            }
+            callbackUploadSuccess={(data) =>
+              setImages((state) => ({ ...state, backgroundImage: data.url }))
+            }
+            options={{ size: 1024 }}
+          >
             <img
-              src={images.backgroundImage && images.backgroundImage.url || "https://linktree.com.br/new/uploads/avatars/0d6403b7228353f5265b234b9bff9358.jpg"}
-              width="160px"
+              src={images.backgroundImage || "/assets/upload.png"}
+              alt=""
+              width="256px"
             />
           </DragTeste>
         </GroupInput>

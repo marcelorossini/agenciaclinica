@@ -18,20 +18,19 @@ import { Wrapper } from "../../Helpers/style";
 import { showModal, hideModal } from "../../Helpers/Modal";
 import { alertDialog } from "../../Helpers/Alert";
 import { useForm } from "react-hook-form";
+import api from "../../../services/api";
 
 import {
   Form,
   Input,
   Label,
-  GroupInput,
-  Select,
-  CheckBox,
+  GroupInput
 } from "../../../styles/admin/index";
 
 export default function Home() {
   const handlePreRegister = () => {
     showModal({
-      title: "Pré-Cadastro",
+      title: "Pré-cadastro",
       component: <Modal />,
       maxWidth: "480px",
     });
@@ -74,34 +73,34 @@ function Modal() {
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
+  const handleOnSubmit = async (data) => {
+    await api.post(`/pre-registration`, data);    
     hideModal()
     alertDialog({
       type: 'Alert',
       title: 'Prontinho!',
-      message: 'Aguarde nosso contato!'
+      message: 'Aguarde nosso contato =)'
     })
   };
 
   return (
     <>
-    <TextModal>Se inscreva sem compromisso e garanta uma sessão fotográfica + 15% de desconto caso deseje fechar seu pacote de marketing digital após receber seu orçamento, as vagas são limitadas!</TextModal>
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <TextModal>Se inscreva <b>sem compromisso</b> e garanta uma sessão fotográfica + 15% de desconto, caso deseje fechar seu pacote de marketing digital após receber seu orçamento. Não perca tempo, as vagas são limitadas!</TextModal>
+    <Form onSubmit={handleSubmit(handleOnSubmit)}>
       <GroupInput>
         <Label>Nome:</Label>
-        <Input type="text" height="38px" {...register("name")} />
+        <Input height="38px" {...register("name")} />
       </GroupInput>
       <GroupInput>
-        <Label>Telefone:</Label>
-        <Input type="text" height="38px" {...register("name")} />
+        <Label>Whatsapp:</Label>
+        <Input height="38px" {...register("whatsapp")} />
       </GroupInput>
       <GroupInput>
         <Label>Email:</Label>
-        <Input type="text" height="38px" {...register("name")} />
+        <Input height="38px" {...register("email")} />
       </GroupInput>
       <InformationTextModal>*Válido para os 10 primeiros clientes que fecharem contrato com a agência.</InformationTextModal>
       <ButtonModal>Enviar</ButtonModal>

@@ -74,7 +74,7 @@ export const Title = styled.strong`
   display: block;
 
   @media (min-width: 768px) {
-    width: 220px;
+    max-width: 220px;
   }
 `;
 

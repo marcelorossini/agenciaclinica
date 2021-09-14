@@ -47,11 +47,18 @@ export const ArrowButton = styled.a`
 `;
 
 
-export const CostumerImage = styled.img`
-  width: 100%;
-  max-width: 256px;
-  border-radius: 100%;
-  transform: scale(1);
+export const CostumerImage = styled.div`
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+  border-radius: 50%;
+  justify-self: center;
+
+  & > img {
+    display: inline;
+    height: 100%;
+    width: auto;
+  }
 
   &:hover {
     transform: scale(1.1);
@@ -66,6 +73,7 @@ export const CostumerName = styled.p`
 `
 
 export const CostumerOccupation = styled.p`
+  height: 10px;
   display: block;
   color: #ffffff;
 `
