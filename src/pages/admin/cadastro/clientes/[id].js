@@ -184,7 +184,6 @@ const Cliente = () => {
               width="256px"
             />
           </DragTeste>
-          {images.profileImage && images.profileImage.url}
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Foto fundo:</Label>

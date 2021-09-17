@@ -70,7 +70,9 @@ const Clientes = ({ data }) => {
       </Head>
       <Page backgroundImage={background_image}>
         <Grid>
-          <Image src={profile_image} />
+          <Image>
+            <img src={profile_image} />
+          </Image>
           <Name>{name}</Name>
           <Description>{description}</Description>
           <WrapperButtons>

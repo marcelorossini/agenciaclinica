@@ -11,7 +11,7 @@ const Sidebar = (props) => {
       <Username>Aryane Toffetti</Username>
       <List>
         <li onClick={() => router.push("/admin/cadastro/clientes")}>Clientes</li>
-        <li onClick={() => router.push("/admin/cadastro/pre-cadastro")}>Pré-Cadastro</li>
+        <li onClick={() => router.push("/admin/cadastro/pre-cadastro")}>Pré-cadastro</li>
         <li onClick={() => router.push("/admin/logout")}>Sair</li>
       </List>
       <Logo>

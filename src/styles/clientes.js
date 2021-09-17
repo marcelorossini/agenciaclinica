@@ -14,11 +14,18 @@ export const Grid = styled.div`
     overflow-y: auto;
 `
 
-export const Image = styled.img`
-    width: 128px;
-    height: 128px;
-    border-radius: 100%;
-    margin: 0 auto;
+export const Image = styled.div`
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+  border-radius: 100%;
+  margin: 0 auto;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `
 
 export const Name = styled.h1`

@@ -51,13 +51,12 @@ export const CostumerImage = styled.div`
   width: 128px;
   height: 128px;
   overflow: hidden;
-  border-radius: 50%;
-  justify-self: center;
+  border-radius: 100%;
 
   & > img {
-    display: inline;
+    width: 100%;
     height: 100%;
-    width: auto;
+    object-fit: cover;
   }
 
   &:hover {
