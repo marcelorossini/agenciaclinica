@@ -8,7 +8,7 @@ export default function Home() {
     <Wrapper>
       <Grid>
         <Title>
-          <span>nossos serviços</span>
+          nossos serviços
         </Title>
         <List>
           <Item>

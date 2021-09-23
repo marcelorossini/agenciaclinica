@@ -1,6 +1,6 @@
 import {
   Grid,
-  GridSocialLinks,
+  Title,
   Item,
   CostumerImage,
   CostumerName,
@@ -13,6 +13,8 @@ import { ArrowIosBack, ArrowIosForward } from "@styled-icons/evaicons-solid";
 import { Wrapper } from "../../Helpers/style";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
+
+import Slider from "../../Helpers/Slider";
 
 export default function Customers() {
   const [data, setData] = useState([]);
@@ -27,12 +29,29 @@ export default function Customers() {
   return (
     <Wrapper>
       <Grid>
-        <GridSocialLinks>
-          <ArrowButton>
-            <ArrowIosBack />
-          </ArrowButton>
-          {data.map((item) => 
-            <Item href={`/clientes/${item.url}`} target="_blank">
+        <Title>clientes</Title>
+        {data.length > 0 &&
+        <Slider
+          settings={{
+            speed: 1000,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            initialSlide: 0,
+            prevArrow: <ArrowButton><div><ArrowIosBack /></div></ArrowButton>,
+            nextArrow: <ArrowButton><div><ArrowIosForward /></div></ArrowButton>,
+            responsive: [
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                }
+              },        
+            ]          
+          }}
+        >
+          {data.map((item, index) => (
+            <Item href={`/clientes/${item.url}`} target="_blank" key={index}>
               <CostumerImage>
                 <img src={item.profile_image} alt="" />
               </CostumerImage>
@@ -41,11 +60,9 @@ export default function Customers() {
               </CostumerName>
               <CostumerOccupation>{item.description}</CostumerOccupation>
             </Item>
-          )}
-          <ArrowButton>
-            <ArrowIosForward />
-          </ArrowButton>
-        </GridSocialLinks>
+          ))}
+        </Slider>
+        }
       </Grid>
     </Wrapper>
   );

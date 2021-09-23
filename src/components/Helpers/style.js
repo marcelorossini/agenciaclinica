@@ -15,7 +15,7 @@ export const Container = styled.div`
     background-image: url(${backgroundImage});
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: center;
   `}
 
   @media not all and (min-resolution: .001dpcm) {

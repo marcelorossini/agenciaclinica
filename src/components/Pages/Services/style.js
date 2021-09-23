@@ -65,10 +65,10 @@ export const Title = styled.div`
   padding-bottom: 12px;
   color: #00A499;
   font-weight: bold;
-  font-size: 20px;
+  width: 100%;
   text-align: center;
+  font-size: 26px;
   @media (min-width: 768px) {
     font-size: 40px;
-    padding-bottom: 0px;
   }
 `
