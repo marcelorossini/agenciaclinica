@@ -4,7 +4,7 @@ export const Grid = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 100%;
   grid-template-rows: auto 1fr;
   align-items: center;
   justify-content: center;
@@ -20,12 +20,22 @@ export const Item = styled.a`
 `;
 
 export const CostumerImage = styled.div`
-  width: calc(128px + (128px * 0.1));
-  height: calc(128px + (128px * 0.1));
+  width: 180px;
+  height: 180px;
   overflow: hidden;
   border-radius: 100%;
   margin: 0 auto;
   transform: scale(.9);
+
+  @media (min-width: 576px) { 
+    width: 100px;
+    height: 100px;
+  }
+
+  @media (min-width: 768px) { 
+    width: 180px;
+    height: 180px;
+  }
 
   & > img {
     width: 100%;
@@ -51,39 +61,6 @@ export const CostumerOccupation = styled.p`
   color: #ffffff;
 `
 
-export const ArrowButton = styled.a`
-  width: 48px;
-  height: 100%;
-  z-index: 1000;
-    
-  & > div {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  & > div > svg {
-    cursor: pointer;  
-    color: #ffffff;
-    width: 48px;
-    transition: .3s all;
-    transform: scale(1);
-  }
-  
-
-  & > div > svg:hover {
-    transform: scale(1.4);
-  }  
-`;
-
 export const Title = styled.h1`
   color: #ffffff;
-  width: 100%;
-  text-align: center;
-  font-size: 20px;
-  @media (min-width: 768px) {
-    font-size: 40px;
-  }
 `

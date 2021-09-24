@@ -67,7 +67,10 @@ export const Logo = styled.div`
 
 export const Navbar = styled.nav`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  @media (min-width: 576px) { 
+    justify-content: flex-end;
+  }
 `;
 
 export const Footer = styled.div`

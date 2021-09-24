@@ -1,14 +1,12 @@
-import Link from "next/link";
-import { Grid, GridSocialLinks, Item, Label } from "./style";
+import { Grid, GridSocialLinks, Item, Title, Footer } from "./style";
 
 import { Facebook, Instagram, Whatsapp } from "@styled-icons/boxicons-logos";
-import { Mail } from "@styled-icons/fluentui-system-regular";
 import { Location } from '@styled-icons/ionicons-outline/'
 
 export default function Home() {
   return (
     <Grid>
-      <Label className="fontSizePrimary">entre em contato:</Label>
+      <Title className="fontTitle">entre em contato:</Title>
       <GridSocialLinks>
         <Item href="https://www.facebook.com/agenciaclinica" target="_blank">
           <Facebook />
@@ -24,15 +22,15 @@ export default function Home() {
         </Item>
       </GridSocialLinks>
       <div>
-        <Label className="fontSizeSecondary">
+        <Footer>
           Aryane Toffetti | (14) 99181-4270
-        </Label>
-        <Label className="fontSizeSecondary">
+        </Footer>
+        <Footer>
           Rua Paissandu, Nº 333, Sala 3 - Centro - Jaú/SP
-        </Label>
-        <Label className="fontSizeSecondary">
+        </Footer>
+        <Footer>
           contato@agenciaclinica.com.br
-        </Label>
+        </Footer>
       </div>
     </Grid>
   );

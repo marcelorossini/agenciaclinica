@@ -1,13 +1,73 @@
-import { Component } from "./style";
+import "react-multi-carousel/lib/styles.css";
+import { Container, Component, ArrowButton } from "./style";
+import { ArrowIosBack, ArrowIosForward } from "@styled-icons/evaicons-solid";
 
-const Slider = props => {
-const { children, settings = {} } = props
+const Slider = (props) => {
+  const { children, ...restOfProps } = props;
+  /*
+      customLeftArrow={
+        <ArrowButton left>
+          <div>
+            <ArrowIosBack />
+          </div>
+        </ArrowButton>
+      }
+      customRightArrow={
+        <ArrowButton right>
+          <div>
+            <ArrowIosForward />
+          </div>
+        </ArrowButton>
+      }
+*/
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 5000, min: 768 },
+      items: 4,
+      slidesToSlide: 4,
+    },
+    mobile: {
+      breakpoint: { max: 576, min: 0 },
+      items: 1,
+    },
+  };
 
-    return(
-        <Component {...settings}>
-            {children}
-        </Component>
-    )
-}
+  return (
+    <Container>
+    <Component
+      infinite={true}
+      responsive={responsive}
+      keyBoardControl={true}
+      customButtonGroup={<ButtonGroup />}
+      arrows={false} 
+      renderButtonGroupOutside={true} 
+      {...restOfProps}
+    >
+      {children}
+    </Component>
+    </Container>
+  );
+};
 
-export default Slider
+export default Slider;
+
+const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+  const {
+    carouselState: { currentSlide },
+  } = rest;
+
+  return (
+    <div>
+      <ArrowButton left onClick={() => previous()}>
+        <div>
+          <ArrowIosBack />
+        </div>
+      </ArrowButton>
+      <ArrowButton right onClick={() => next()}>
+        <div>
+          <ArrowIosForward />
+        </div>
+      </ArrowButton>
+    </div>
+  );
+};

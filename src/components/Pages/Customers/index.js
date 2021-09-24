@@ -8,7 +8,7 @@ import {
   ArrowButton,
 } from "./style";
 
-import { ArrowIosBack, ArrowIosForward } from "@styled-icons/evaicons-solid";
+
 
 import { Wrapper } from "../../Helpers/style";
 import { useEffect, useState } from "react";
@@ -29,41 +29,24 @@ export default function Customers() {
   return (
     <Wrapper>
       <Grid>
-        <Title>clientes</Title>
-        {data.length > 0 &&
-        <Slider
-          settings={{
-            speed: 1000,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            initialSlide: 0,
-            prevArrow: <ArrowButton><div><ArrowIosBack /></div></ArrowButton>,
-            nextArrow: <ArrowButton><div><ArrowIosForward /></div></ArrowButton>,
-            responsive: [
-              {
-                breakpoint: 768,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                }
-              },        
-            ]          
-          }}
-        >
-          {data.map((item, index) => (
-            <Item href={`/clientes/${item.url}`} target="_blank" key={index}>
-              <CostumerImage>
-                <img src={item.profile_image} alt="" />
-              </CostumerImage>
-              <CostumerName className="fontSizeSecondary">
-                {item.name}
-              </CostumerName>
-              <CostumerOccupation>{item.description}</CostumerOccupation>
-            </Item>
-          ))}
-        </Slider>
-        }
+        <Title className="fontTitle">clientes</Title>
+        {data.length > 0 && (
+          <Slider>
+            {data.map((item, index) => (
+              <Item href={`/clientes/${item.url}`} target="_blank" key={index}>
+                <CostumerImage>
+                  <img src={item.profile_image} alt="" />
+                </CostumerImage>
+                <CostumerName className="fontSizeSecondary">
+                  {item.name}
+                </CostumerName>
+                <CostumerOccupation>{item.description}</CostumerOccupation>
+              </Item>
+            ))}
+          </Slider>
+        )}
       </Grid>
     </Wrapper>
   );
 }
+

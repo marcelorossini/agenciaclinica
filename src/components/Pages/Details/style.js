@@ -48,7 +48,7 @@ export const Item = styled.div`
   align-items: center;
   justify-items: center;
   text-align: center;
-  padding: 64px;
+  padding: 40px;
 
   @media (min-width: 992px) {
     grid-template-rows: 1fr auto 1px 1fr;
@@ -82,9 +82,4 @@ export const Description = styled.p`
   align-self: start;
   color: #ffffff;
   display: block;
-  font-size: 16px;
-
-  @media (min-width: 576px) {
-    font-size: 20px;
-  }
 `;

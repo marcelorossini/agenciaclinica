@@ -86,6 +86,16 @@ export default createGlobalStyle`
             font-size: 28px;
         }                
     }    
+
+    .fontTitle {
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+        font-size: 26px;       
+        @media (min-width: 768px) {
+            font-size: 40px;
+        }
+    }
 `;
 
 export const animationSlideUp = keyframes`

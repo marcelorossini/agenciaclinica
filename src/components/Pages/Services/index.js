@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Wrapper>
       <Grid>
-        <Title>
+        <Title className="fontTitle">
           nossos serviços
         </Title>
         <List>

@@ -4,22 +4,23 @@ export const Grid = styled.div`
   width: 100%;
   min-height: 100%;
   display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 40px;
 `
 
 export const GridSocialLinks = styled.div`
   width: 100%;
+  max-width: 320px;
   margin: 0 auto;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  grid-auto-flow: column; 
-  gap: 12px;
-  
-  @media (min-width: 768px) {    
-    gap: 40px;
+  display: flex;
+  justify-content: space-between;  
+
+  @media (min-width: 576px) {
+    max-width: 740px;
   }
 `;
 
@@ -64,18 +65,31 @@ export const Item = styled.a`
 
   @media (min-width: 576px) {
     & > svg {
-      width: 96px;
+      width: 128px;
     }
   }
 
   @media (min-width: 768px) {
     & > svg {
-      width: 128px;
+      width: 162px;
     }
   }
 `;
 
-export const Label = styled.p`
+export const Footer = styled.p`
   display: block;
+  color: #ffffff;
+  font-size: 12px;
+
+  @media (min-width: 360px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+`
+
+export const Title = styled.h1`
   color: #ffffff;
 `

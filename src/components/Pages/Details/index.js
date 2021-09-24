@@ -21,7 +21,7 @@ export default function Home() {
             <Image src="/assets/details/dart.svg" alt="" />
             <Title className="fontSizeSecondary">As pessoas vão te encontrar</Title>
             <Divider />
-            <Description>
+            <Description className="fontSizeSecondary">
               Estratégias de Google ADS e Facebook ADS para que você apareça nas
               buscas e em anúncios.
             </Description>
@@ -32,7 +32,7 @@ export default function Home() {
             <Image src="/assets/details/heart.svg" alt="" />
             <Title className="fontSizeSecondary">Seu conteúdo irá gerar conexão</Title>
             <Divider />
-            <Description>
+            <Description className="fontSizeSecondary">
               Fazer posts manjados igual todo mundo não funciona mais. É preciso
               estratégia para se tornar referência em sua área.
             </Description>
@@ -43,7 +43,7 @@ export default function Home() {
             <Image src="/assets/details/money.svg" alt="" />
             <Title className="fontSizeSecondary">Seu faturamento vai aumentar</Title>
             <Divider />
-            <Description>
+            <Description className="fontSizeSecondary">
               É um investimento no seu próprio negócio. Quanto mais pessoas você
               conquista, mais pacientes você atrai.
             </Description>

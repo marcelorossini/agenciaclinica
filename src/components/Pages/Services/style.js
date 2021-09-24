@@ -8,29 +8,32 @@ export const Grid = styled.div`
 `
 
 export const List = styled.div`
-  width: fit-content;
+  width: 100%;
+  max-width: 768px;
   height: 100%;
   margin: 0 auto;
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 
   @media (min-width: 768px) {
-    width: 100%;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(4, 1fr);
+    flex-direction: row;
   }
 `;
 
 export const Item = styled.div`
   display: grid;
+  width: 100%;
+  max-width: 320px;
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
   align-items: center;
   gap: var(--size-padding-1x);
 
   @media (min-width: 768px) {
+    width: auto;
+    max-width: inherit;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     justify-items: center;
@@ -62,13 +65,9 @@ export const Label = styled.strong`
 `;
 
 export const Title = styled.div`
-  padding-bottom: 12px;
   color: #00A499;
-  font-weight: bold;
-  width: 100%;
-  text-align: center;
-  font-size: 26px;
+  padding-bottom: 36px;
   @media (min-width: 768px) {
-    font-size: 40px;
+    padding-bottom: 0px;
   }
 `
