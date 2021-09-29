@@ -56,7 +56,7 @@ export const CostumerName = styled.p`
 `
 
 export const CostumerOccupation = styled.p`
-  height: 10px;
+  height: 20px;
   display: block;
   color: #ffffff;
 `
