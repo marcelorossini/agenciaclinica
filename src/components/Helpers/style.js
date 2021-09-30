@@ -18,11 +18,13 @@ export const Container = styled.div`
     background-position: center;
   `}
 
-  @media not all and (min-resolution: .001dpcm) {
-    @supports (-webkit-appearance:none) and (stroke-color: transparent) {
+  ${({fixMinWidthIos}) => fixMinWidthIos && `
+    @media not all and (min-resolution: .001dpcm) {
+      @supports (-webkit-appearance:none) and (stroke-color: transparent) {
         min-height: -webkit-fill-available;       
+      }
     }
-  }
+  `}
 `;
 
 export const Wrapper = styled.div`

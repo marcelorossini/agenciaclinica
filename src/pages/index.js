@@ -14,7 +14,7 @@ export default function Index() {
       <Head>
         <title>Agência Clinica  - Marketing Digital para Profissionais da Saúde</title>
       </Head>
-      <Page backgroundColor="var(--color-primary)">
+      <Page backgroundColor="var(--color-primary)" fixMinWidthIos={true}>
         <Home />
       </Page>
       <Page id="details">

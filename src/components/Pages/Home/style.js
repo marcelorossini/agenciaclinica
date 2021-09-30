@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 export const Background = styled.div`
   position: absolute;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   transition: all 0.3s;
   top: 0;
   left: 0;
@@ -25,6 +25,12 @@ export const Background = styled.div`
   @media (min-width: 2560px) {
     background: url("/assets/background-2160.png");
   }  
+
+  @media not all and (min-resolution: .001dpcm) {
+    @supports (-webkit-appearance:none) and (stroke-color: transparent) {
+        min-height: -webkit-fill-available;       
+    }
+  }
 `;
 
 export const Lines = styled.div`
