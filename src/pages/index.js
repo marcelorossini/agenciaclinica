@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>Agência Clinica</title>
+        <title>Agência Clinica  - Marketing Digital para Profissionais da Saúde</title>
       </Head>
       <Page backgroundColor="var(--color-primary)">
         <Home />
