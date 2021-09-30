@@ -8,7 +8,11 @@ export const Button = styled.a`
   z-index: 2000;
 
   & > img {
-    width: 40px;
+    width: 40px;    
+  }
+
+  & > img:hover {
+    filter: brightness(120%);
   }
 
   @media (min-width: 414px) {      

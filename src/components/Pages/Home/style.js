@@ -12,12 +12,16 @@ export const Background = styled.div`
   background-repeat: no-repeat !important;
   background-position: left !important;
   z-index: 0;
-  opacity: 0.3;
+  opacity: 0.4;  
 
   @media (min-width: 768px) {
     background: url("/assets/background-1080.png");
   }
-
+  
+  @media (min-width: 1024px) {
+    mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 50%, rgba(255,255,255,0) 70%);
+  }
+  
   @media (min-width: 1920px) {
     background: url("/assets/background-1440.png");
   }  
@@ -119,6 +123,9 @@ export const NavbarItem = styled.div`
   &:last-child {
     margin: 0;
   }
+  &:hover {
+    text-shadow: 0px 0px 20px rgb(255,255,255,0.5);
+  }
 `;
 
 export const animationButton = keyframes`
@@ -155,6 +162,10 @@ export const Button = styled.div`
   margin-bottom: 16px;
   animation: ${animationButton} 2s linear infinite;
   cursor: pointer;
+
+  &:hover {
+    filter: brightness(110%);
+  }
 
   @media (min-width: 768px) {
     padding: 8px;
