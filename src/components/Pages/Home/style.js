@@ -7,12 +7,24 @@ export const Background = styled.div`
   transition: all 0.3s;
   top: 0;
   left: 0;
-  background: url("/assets/background.png");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: left;
+  background: url("/assets/background-576.png");
+  background-size: auto 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: left !important;
   z-index: 0;
   opacity: 0.3;
+
+  @media (min-width: 768px) {
+    background: url("/assets/background-1080.png");
+  }
+
+  @media (min-width: 1920px) {
+    background: url("/assets/background-1440.png");
+  }  
+
+  @media (min-width: 2560px) {
+    background: url("/assets/background-2160.png");
+  }  
 `;
 
 export const Lines = styled.div`
@@ -21,7 +33,7 @@ export const Lines = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  background: url("/assets/lines2.svg");
+  background: url("/assets/lines.svg");
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 0;
