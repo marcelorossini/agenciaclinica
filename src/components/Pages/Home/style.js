@@ -119,6 +119,8 @@ export const Footer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 500;  
 
   @media (min-width: 568px) {
     min-height: 56px;

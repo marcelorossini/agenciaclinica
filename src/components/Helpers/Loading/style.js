@@ -38,15 +38,11 @@ export const fadeOut = keyframes`
 export const Container = styled.div`
   background: #ffffff90;
   user-select: none;
-  ${({ sizeAndPosition }) =>
-    sizeAndPosition &&
-    `
-    width: ${sizeAndPosition.width}px;
-    height: ${sizeAndPosition.height}px;
-    position: fixed;
-    top: ${sizeAndPosition.top}px;
-    left: ${sizeAndPosition.left}px;
-  `}
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 
   ${({ active }) => {
     if (active === true)
@@ -68,9 +64,10 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  & > img {
+  & > svg {
     width: ${({ width }) => width || '64px'};
     margin: ${({ margin }) => margin || '12px'};
     animation: 1.5s linear ${SpinnerAnimation} infinite;
+    color: var(--color-primary);
   }
 `

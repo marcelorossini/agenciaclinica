@@ -11,7 +11,7 @@ export const Container = styled.div`
   align-items: center;
   color: var(--color-text-primary);
   position: relative;
-  z-index: 1000;
+  z-index: 100;
 
   & > svg {
       height: 18px;

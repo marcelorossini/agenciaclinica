@@ -9,11 +9,14 @@ import { Button } from "../../../../styles/admin/index";
 
 const Clientes = () => {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handle = async () => {
+      setIsLoading(true);
       const response = await api.get("/customer");
       setData(response.data);
+      setIsLoading(false);
     };
     handle();
   }, []);
@@ -30,7 +33,7 @@ const Clientes = () => {
   ];
 
   return (
-    <Layout title="Clientes">
+    <Layout title="Clientes" loading={isLoading}>
       <Datatable columns={columns} data={data} />
       <Link href="/admin/cadastro/clientes/novo">
         <Button type="submit" widthDesktop="200px">

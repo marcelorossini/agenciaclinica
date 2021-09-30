@@ -9,11 +9,14 @@ import { Button } from "../../../../styles/admin/index";
 
 const PreCadastro = () => {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handle = async () => {
+      setIsLoading(true);
       const response = await api.get("/pre-registration");
       setData(response.data);
+      setIsLoading(false);
     };
     handle();
   }, []);
@@ -34,7 +37,7 @@ const PreCadastro = () => {
   ];
 
   return (
-    <Layout title="Pre-cadastro">
+    <Layout title="Pre-cadastro" loading={isLoading}>
       <Datatable columns={columns} data={data} />
     </Layout>
   );

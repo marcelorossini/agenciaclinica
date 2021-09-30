@@ -16,12 +16,14 @@ import {
   CheckBox,
   GroupButtons,
 } from "../../../../styles/admin/index";
-import { DragTeste } from "../../../../components/Helpers/Uploader";
-
-import { CloudUpload } from "@styled-icons/bootstrap";
+import {
+  Uploader,
+  UploaderImageGallery,
+} from "../../../../components/Helpers/Uploader";
 
 const Cliente = () => {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
   const [title, setTitle] = useState("");
   const [images, setImages] = useState({});
 
@@ -39,21 +41,28 @@ const Cliente = () => {
     if (id === "novo") return;
 
     const handle = async () => {
-      const { data } = await api.get(`/customer/${id}`);
+      setIsLoading(true);
+      try {
+        const { data } = await api.get(`/customer/${id}`);
 
-      // Title
-      setTitle(data.name);
+        // Title
+        setTitle(data.name);
 
-      // Preenche valores
-      Object.keys(data).forEach((item) => {
-        setValue(item, data[item]);
-      });
+        // Preenche valores
+        Object.keys(data).forEach((item) => {
+          setValue(item, data[item]);
+        });
 
-      // Preenche imagens
-      setImages({
-        profileImage: data.profile_image,
-        backgroundImage: data.background_image,
-      });
+        // Preenche imagens
+        setImages({
+          profileImage: data.profile_image,
+          backgroundImage: data.background_image,
+        });
+      } catch (error) {
+        console.log(error);
+        alert("Erro, por favor tente novamente");
+      }
+      setIsLoading(false);
     };
     handle();
   }, [id]);
@@ -62,23 +71,18 @@ const Cliente = () => {
     try {
       let auxData = data;
       // Imagem de perfil
-      if (images.profileImage) {
-        auxData.profile_image = images.profileImage;
-      }
+      auxData.profile_image = images.profileImage || null;
       // Imagem fundo
-      if (images.backgroundImage) {
-        auxData.background_image = images.backgroundImage;
-      }
-  
+      auxData.background_image = images.backgroundImage || null;
       let response;
       if (id === "novo") response = await api.post(`/customer`, auxData);
       else {
         response = await api.put(`/customer/${id}`, auxData);
       }
-  
-      router.push('/admin/cadastro/clientes') 
+
+      router.push("/admin/cadastro/clientes");
     } catch (error) {
-      alert('Erro, tente novamente')
+      alert("Erro, tente novamente");
     }
   };
 
@@ -108,7 +112,7 @@ const Cliente = () => {
   };
 
   return (
-    <Layout title={`Cliente: ${title}`}>
+    <Layout title={`Cliente: ${title}`} loading={isLoading}>
       <Form onSubmit={handleSubmit(handleOnSubmit)}>
         {errors.name && <span>This field is required</span>}
         <GroupInput labelSize="100px">
@@ -168,7 +172,8 @@ const Cliente = () => {
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label htmlFor="profile_image">Foto perfil:</Label>
-          <DragTeste
+          <UploaderImageGallery
+            image={images.profileImage}
             showLoading={true}
             callbackUploadPreview={(data) =>
               setImages((state) => ({ ...state, profileImage: data.url }))
@@ -176,18 +181,13 @@ const Cliente = () => {
             callbackUploadSuccess={(data) =>
               setImages((state) => ({ ...state, profileImage: data.url }))
             }
-            options={{ size: 1024 }}
-          >
-            <img
-              src={images.profileImage || "/assets/upload.png"}
-              alt=""
-              width="256px"
-            />
-          </DragTeste>
+            options={{ size: 256 }}
+          />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Foto fundo:</Label>
-          <DragTeste
+          <UploaderImageGallery
+            image={images.backgroundImage}
             showLoading={true}
             callbackUploadPreview={(data) =>
               setImages((state) => ({ ...state, backgroundImage: data.url }))
@@ -196,13 +196,7 @@ const Cliente = () => {
               setImages((state) => ({ ...state, backgroundImage: data.url }))
             }
             options={{ size: 1024 }}
-          >
-            <img
-              src={images.backgroundImage || "/assets/upload.png"}
-              alt=""
-              width="256px"
-            />
-          </DragTeste>
+          />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Opções:</Label>
