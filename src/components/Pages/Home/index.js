@@ -27,7 +27,8 @@ import {
   Form,
   Input,
   Label,
-  GroupInput
+  GroupInput,
+  Error
 } from "../../../styles/admin/index";
 
 export default function Home() {
@@ -106,11 +107,13 @@ function Modal() {
     <Form onSubmit={handleSubmit(handleOnSubmit)}>
       <GroupInput>
         <Label>Nome:</Label>
-        <Input height="38px" {...register("name")} />
+        <Input height="38px" {...register("name", { required: true })} />
+        {errors.name && <Error secondary>Por favor preencha o Nome.</Error>}
       </GroupInput>
       <GroupInput>
         <Label>Whatsapp:</Label>
-        <Input height="38px" {...register("whatsapp")} />
+        <Input height="38px" {...register("whatsapp", { required: true })} />
+        {errors.whatsapp && <Error secondary>Por favor preencha o Whatsapp.</Error>}
       </GroupInput>
       <GroupInput>
         <Label>Email:</Label>

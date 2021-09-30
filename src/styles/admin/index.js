@@ -14,9 +14,12 @@ export const Label = styled.label`
 `;
 
 export const Error = styled.p`
-  margin: 12px 0;
-  height: 32px;
+  margin: 2px 0;
   color: #ffffff;
+
+  ${({ secondary }) => secondary && `
+    color: red;
+  `}
 `;
 
 export const Button = styled.button`
