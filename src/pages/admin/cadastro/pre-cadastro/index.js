@@ -37,7 +37,7 @@ const PreCadastro = () => {
   ];
 
   return (
-    <Layout title="Pre-cadastro" loading={isLoading}>
+    <Layout title="Pré-cadastro" loading={isLoading}>
       <Datatable columns={columns} data={data} />
     </Layout>
   );

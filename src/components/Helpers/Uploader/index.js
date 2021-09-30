@@ -170,10 +170,15 @@ export const UploaderImageGallery = (props) => {
           secondary
           type="button"
           onClick={() => {
-            if (confirm("Deseja excluir a imagem?")) {
-              setUrlImage("");
-              if (callbackUploadSuccess) callbackUploadSuccess({ url: null });
-            }
+            alertDialog({
+              type: "Confirm",
+              title: `Deseja excluir a imagem?`,
+              message: `Não será possivel reverter.`,
+              confirmAction: async () => {
+                setUrlImage("");
+                if (callbackUploadSuccess) callbackUploadSuccess({ url: null });
+              },
+            });
           }}
         >
           <Trash /> Excluir imagem

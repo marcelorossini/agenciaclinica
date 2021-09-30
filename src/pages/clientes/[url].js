@@ -68,7 +68,7 @@ const Clientes = ({ data }) => {
       <Head>
         <title>{name} - Agência Clinica</title>
       </Head>
-      <Page backgroundImage={background_image}>
+      <Page backgroundImage={background_image} backgroundColor={'var(--color-primary)'}>
         <Grid>
           <Image>
             <img src={profile_image} />

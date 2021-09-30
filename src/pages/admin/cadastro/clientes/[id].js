@@ -15,9 +15,9 @@ import {
   Select,
   CheckBox,
   GroupButtons,
+  Error
 } from "../../../../styles/admin/index";
 import {
-  Uploader,
   UploaderImageGallery,
 } from "../../../../components/Helpers/Uploader";
 
@@ -60,7 +60,11 @@ const Cliente = () => {
         });
       } catch (error) {
         console.log(error);
-        alert("Erro, por favor tente novamente");
+        alertDialog({
+          type: "Alert",
+          title: `Erro`,
+          message: `Erro, tente novamente`
+        });
       }
       setIsLoading(false);
     };
@@ -82,7 +86,11 @@ const Cliente = () => {
 
       router.push("/admin/cadastro/clientes");
     } catch (error) {
-      alert("Erro, tente novamente");
+      alertDialog({
+        type: "Alert",
+        title: `Erro`,
+        message: `Erro, tente novamente`
+      });
     }
   };
 
@@ -114,25 +122,28 @@ const Cliente = () => {
   return (
     <Layout title={`Cliente: ${title}`} loading={isLoading}>
       <Form onSubmit={handleSubmit(handleOnSubmit)}>
-        {errors.name && <span>This field is required</span>}
         <GroupInput labelSize="100px">
           <Label>Empresa:</Label>
-          <Select defaultValue="agencia" {...register("company")}>
+          <Select defaultValue="agencia" {...register("company", { required: true })}>
             <option value="agencia">Agência Clínica</option>
             <option value="plim">Plim Soluções Criativas</option>
           </Select>
+          {errors.company && <Error secondary>Preencha o campo Empresa.</Error>}
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Url:</Label>
-          <Input {...register("url")} />
+          <Input {...register("url", { required: true })} />
+          {errors.url && <Error secondary>Preencha o campo Url.</Error>}
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Nome:</Label>
-          <Input {...register("name")} />
+          <Input {...register("name", { required: true })} />
+          {errors.name && <Error secondary>Preencha o campo Nome.</Error>}
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Descrição:</Label>
-          <Input {...register("description")} />
+          <Input {...register("description", { required: true })} />
+          {errors.description && <Error secondary>Preencha o campo Descrição.</Error>}
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Telefone:</Label>
@@ -195,7 +206,7 @@ const Cliente = () => {
             callbackUploadSuccess={(data) =>
               setImages((state) => ({ ...state, backgroundImage: data.url }))
             }
-            options={{ size: 1024 }}
+            options={{ size: 1600 }}
           />
         </GroupInput>
         <GroupInput labelSize="100px">
