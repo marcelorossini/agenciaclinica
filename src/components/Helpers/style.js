@@ -18,7 +18,7 @@ export const Container = styled.div`
     background-position: center;
   `}
 
-  ${({fixMinWidthIos}) => fixMinWidthIos && `
+  ${({fixMinHeightIos}) => fixMinHeightIos && `
     @media not all and (min-resolution: .001dpcm) {
       @supports (-webkit-appearance:none) and (stroke-color: transparent) {
         min-height: -webkit-fill-available;       
