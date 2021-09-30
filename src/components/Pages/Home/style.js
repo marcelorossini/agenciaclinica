@@ -43,11 +43,18 @@ export const Lines = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  background: url("/assets/lines.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 0;
-  opacity: 0.08;
+  z-index: 100;
+  overflow: hidden;
+  & > div {
+    width: 150%;
+    height: 150%;
+    margin-top: -25%;
+    margin-left: -25%;
+    background: url("/assets/lines.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+  }
 `;
 
 export const Grid = styled.div`
@@ -55,7 +62,6 @@ export const Grid = styled.div`
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto auto;
-  z-index: 1000;  
 
   ${({ isAndroid }) => isAndroid && `
     padding-bottom: 60px;
@@ -70,6 +76,8 @@ export const Logo = styled.div`
   & > img {
     width: 100%;
     //max-width: 256px;
+    position: relative;
+    z-index: 500;  
   }
 
   @media (min-width: 576px) {
@@ -120,6 +128,8 @@ export const Footer = styled.div`
 export const NavbarItem = styled.div`
   color: #ffffff;
   margin: 0 24px 0 0;
+  position: relative;
+  z-index: 500;  
   &:last-child {
     margin: 0;
   }
@@ -162,6 +172,8 @@ export const Button = styled.div`
   margin-bottom: 16px;
   animation: ${animationButton} 2s linear infinite;
   cursor: pointer;
+  position: relative;
+  z-index: 500;  
 
   &:hover {
     filter: brightness(110%);

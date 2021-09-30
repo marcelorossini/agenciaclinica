@@ -5,7 +5,7 @@ export const Button = styled.a`
   bottom: 40px;
   right: 20px;    
   cursor: pointer;
-  z-index: 2000;
+  z-index: 1000;
 
   & > img {
     width: 40px;    

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useEffect, useState } from 'react'
 
 import {
   Background,
@@ -20,6 +21,7 @@ import { alertDialog } from "../../Helpers/Alert";
 import { useForm } from "react-hook-form";
 import api from "../../../services/api";
 import { isMobile, isAndroid } from 'react-device-detect'
+import Tilt from 'react-parallax-tilt';
 
 import {
   Form,
@@ -29,6 +31,8 @@ import {
 } from "../../../styles/admin/index";
 
 export default function Home() {
+  const [androidBrowser, setAndroidBrowser] = useState(true)
+
   const handlePreRegister = () => {
     showModal({
       title: "Pré-cadastro",
@@ -37,9 +41,13 @@ export default function Home() {
     });
   };
 
+  useEffect(() => {
+    setAndroidBrowser(isAndroid)
+  },[isAndroid])
+
   return (
     <Wrapper>
-      <Grid isAndroid={isAndroid}>
+      <Grid isAndroid={androidBrowser}>
         <Navbar className="fontSizePrimary">
           <NavbarItem>
             <Link href="#servicos">serviços</Link>
@@ -65,7 +73,9 @@ export default function Home() {
         </Footer>
       </Grid>
       <Background />
-      <Lines />
+      <Lines>
+        <Tilt tiltEnable={!isMobile} perspective={1000} gyroscope={true} trackOnWindow={true} transitionSpeed={1000}/>
+      </Lines>
     </Wrapper>
   );
 }
