@@ -56,7 +56,11 @@ export default createGlobalStyle`
     }
 
     .fontSizePrimary {
-        font-size: 20px;
+        font-size: 16px;
+
+        @media (min-width: 414px) {
+            font-size: 20px;
+        }
 
         @media (min-width: 576px) {
             font-size: 24px;
@@ -76,7 +80,11 @@ export default createGlobalStyle`
     }
 
     .fontSizeSecondary {
-        font-size: 20px;
+        font-size: 14px;
+
+        @media (min-width: 414px) {
+            font-size: 18px;
+        }
 
         @media (min-width: 768px) {
             font-size: 24px;

@@ -106,7 +106,7 @@ export const Main = styled.div`
   overflow-y: auto;
   min-height: 100px;
   font-size: 14px;
-  padding: 12px;
+  padding: 20px;
   color: var(--color-text-primary);
 `
 

@@ -9,13 +9,19 @@ export const Grid = styled.div`
 
 export const List = styled.div`
   width: 100%;
-  max-width: 768px;
+  max-width: 228px;
   height: 100%;
-  margin: 0 auto;
+  max-height: 364px;
+  margin: auto auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media (min-width: 414px) {
+    max-width: 768px;
+    max-height: 480px;
+  }
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -41,8 +47,12 @@ export const Item = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 64px;
+  width: 48px;
   height: inherit;
+  
+  @media (min-width: 414px) {      
+    width: 64px;
+  }  
 
   @media (min-width: 576px) {
     width: 90px;

@@ -7,6 +7,7 @@ import Contact from "../components/Pages/Contact";
 import Customers from "../components/Pages/Customers";
 
 import Page from "../components/Helpers";
+import FloatButton from "../components/Layout/FloatButton";
 
 export default function Index() {
   return (
@@ -29,6 +30,7 @@ export default function Index() {
       <Page id="contato" backgroundColor="var(--color-tertiary)">
         <Contact />
       </Page>
+      <FloatButton/>
     </>
   );
 }

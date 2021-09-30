@@ -51,23 +51,31 @@ export const Grid = styled.div`
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto auto;
-  z-index: 1000;
+  z-index: 1000;  
+
+  ${({ isAndroid }) => isAndroid && `
+    padding-bottom: 60px;
+  `}
 `;
 
 export const Logo = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 
   & > img {
     width: 100%;
-    max-width: 256px;
+    //max-width: 256px;
   }
 
   @media (min-width: 576px) {
     & > img {
       max-width: 468px;
     }
+  }
+
+  @media (min-width: 576px) {
+    justify-content: flex-end;
   }
 
   @media (min-width: 1024px) {
@@ -93,8 +101,16 @@ export const Navbar = styled.nav`
 
 export const Footer = styled.div`
   width: 100%;
+  min-height: 40px;
   color: #ffffff;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 568px) {
+    min-height: 56px;
+  }
 `;
 
 export const NavbarItem = styled.div`
@@ -147,12 +163,14 @@ export const Button = styled.div`
 `;
 
 export const TextModal = styled.div`
+  font-size: 16px;
   padding-bottom: 20px;
+  text-align: justify;
 `
 
 export const InformationTextModal = styled.div`
   width: 100%;
   align-self: flex-start;
   font-size: 14px;
-  padding-bottom: 10px;
+  padding: 10px 0;
 `

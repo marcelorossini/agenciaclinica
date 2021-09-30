@@ -19,6 +19,7 @@ import { showModal, hideModal } from "../../Helpers/Modal";
 import { alertDialog } from "../../Helpers/Alert";
 import { useForm } from "react-hook-form";
 import api from "../../../services/api";
+import { isMobile, isAndroid } from 'react-device-detect'
 
 import {
   Form,
@@ -38,7 +39,7 @@ export default function Home() {
 
   return (
     <Wrapper>
-      <Grid>
+      <Grid isAndroid={isAndroid}>
         <Navbar className="fontSizePrimary">
           <NavbarItem>
             <Link href="#servicos">serviços</Link>
@@ -56,11 +57,11 @@ export default function Home() {
         </Logo>
 
         <Button onClick={() => handlePreRegister()}>
-          Faça aqui seu pré-cadastro para o lançamento!
+          Faça aqui seu pré-cadastro {isMobile && <br/>} para o lançamento!
         </Button>
 
         <Footer className="fontSizeSecondary">
-          Agência especializada em profissionais da saúde
+          Agência especializada {isMobile && <br/>} em profissionais da saúde
         </Footer>
       </Grid>
       <Background />
@@ -77,7 +78,10 @@ function Modal() {
   } = useForm();
 
   const handleOnSubmit = async (data) => {
-    await api.post(`/pre-registration`, data);    
+    try {      
+      await api.post(`/pre-registration`, data);    
+    } catch (error) {      
+    }
     hideModal()
     alertDialog({
       type: 'Alert',
@@ -88,7 +92,7 @@ function Modal() {
 
   return (
     <>
-    <TextModal>Se inscreva <b>sem compromisso</b> e garanta uma sessão fotográfica + 15% de desconto, caso deseje fechar seu pacote de marketing digital após receber seu orçamento. Não perca tempo, as vagas são limitadas!</TextModal>
+    <TextModal>Se inscreva sem compromisso e <b>ganhe uma sessão fotográfica + 10% de desconto</b>, caso queira adquirir nossos serviços de marketing digital após o envio do orçamento. As vagas são limitadas e você precisa aproveitar essa oportunidade!</TextModal>
     <Form onSubmit={handleSubmit(handleOnSubmit)}>
       <GroupInput>
         <Label>Nome:</Label>
@@ -102,7 +106,7 @@ function Modal() {
         <Label>Email:</Label>
         <Input height="38px" {...register("email")} />
       </GroupInput>
-      <InformationTextModal>*Válido para os 10 primeiros clientes que fecharem contrato com a agência.</InformationTextModal>
+      <InformationTextModal>*Promoção válida até que as vagas sejam preenchidas ou até 08/11/2021.</InformationTextModal>
       <ButtonModal>Enviar</ButtonModal>
     </Form>
     </>
