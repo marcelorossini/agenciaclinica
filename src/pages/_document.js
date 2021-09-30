@@ -58,7 +58,6 @@ export default class MyDocument extends Document {
           )}
           <meta charSet="utf-8" />
           <meta name="description" content="O marketing tradicional não funciona mais! Somos uma agência 100% focada em estratégias humanizadas, não basta só atrair pacientes, nós te ajudamos a encantá-los." />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <link rel={"preconnect"} href={"https://fonts.googleapis.com"} />
           <link rel={"preconnect"} href={"https://fonts.gstatic.com"} />
           <link href={"https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"} rel={"stylesheet"} />
