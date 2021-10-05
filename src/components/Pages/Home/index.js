@@ -103,7 +103,7 @@ function Modal() {
 
   return (
     <>
-    <TextModal>Se inscreva sem compromisso e <b>ganhe uma sessão fotográfica + 10% de desconto</b>, caso queira adquirir nossos serviços de marketing digital após o envio do orçamento. As vagas são limitadas e você precisa aproveitar essa oportunidade!</TextModal>
+    <TextModal>Se inscreva para receber seu orçamento sem compromisso e ganhe <b>10% de desconto + uma mentoria exclusiva</b>, caso queira turbinar suas redes sociais com a gente. As vagas são limitadas, então corre!</TextModal>
     <Form onSubmit={handleSubmit(handleOnSubmit)}>
       <GroupInput>
         <Label>Nome:</Label>
@@ -119,7 +119,7 @@ function Modal() {
         <Label>Email:</Label>
         <Input height="38px" {...register("email")} />
       </GroupInput>
-      <InformationTextModal>*Promoção válida até que as vagas sejam preenchidas ou até 08/11/2021.</InformationTextModal>
+      <InformationTextModal>*Promoção válida até 30/10/2021 ou até as vagas se esgotarem.</InformationTextModal>
       <ButtonModal>Enviar</ButtonModal>
     </Form>
     </>
