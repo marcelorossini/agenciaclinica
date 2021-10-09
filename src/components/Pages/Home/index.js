@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router"
+import { useRouter } from "next/router";
 
 import {
   Background,
@@ -12,7 +12,7 @@ import {
   Footer,
   Button,
   TextModal,
-  InformationTextModal
+  InformationTextModal,
 } from "./style";
 
 import { Button as ButtonModal } from "../../../styles/admin/index";
@@ -21,20 +21,20 @@ import { showModal, hideModal } from "../../Helpers/Modal";
 import { alertDialog } from "../../Helpers/Alert";
 import { useForm } from "react-hook-form";
 import api from "../../../services/api";
-import { isMobile, isAndroid } from 'react-device-detect'
-import Tilt from 'react-parallax-tilt';
+import { isMobile, isAndroid, isChrome } from "react-device-detect";
+import Tilt from "react-parallax-tilt";
 
 import {
   Form,
   Input,
   Label,
   GroupInput,
-  Error
+  Error,
 } from "../../../styles/admin/index";
 
 export default function Home() {
-  const [androidBrowser, setAndroidBrowser] = useState(true)
-  const router = useRouter()
+  const [paddingInHome, setPaddingInHome] = useState(false);
+  const router = useRouter();
 
   const handlePreRegister = () => {
     showModal({
@@ -45,19 +45,19 @@ export default function Home() {
   };
 
   useEffect(() => {
-    setAndroidBrowser(isAndroid)
-  },[isAndroid])
+    if (isAndroid && isChrome) setPaddingInHome(true);
+  }, [isAndroid, isChrome]);
 
   useEffect(() => {
-    const { q } = router.query
-    if (q === 'pre-cadastro') {
-      handlePreRegister()
+    const { q } = router.query;
+    if (q === "pre-cadastro") {
+      handlePreRegister();
     }
-  },[router.query])
+  }, [router.query]);
 
   return (
     <Wrapper>
-      <Grid isAndroid={androidBrowser}>
+      <Grid paddingHome={paddingInHome}>
         <Navbar className="fontSizePrimary">
           <NavbarItem>
             <Link href="#servicos">serviços</Link>
@@ -75,16 +75,22 @@ export default function Home() {
         </Logo>
 
         <Button onClick={() => handlePreRegister()}>
-          Faça aqui seu pré-cadastro {isMobile && <br/>} para o lançamento!
+          Faça aqui seu pré-cadastro {isMobile && <br />} para o lançamento!
         </Button>
 
         <Footer className="fontSizeSecondary">
-          Agência especializada {isMobile && <br/>} em profissionais da saúde
+          Agência especializada {isMobile && <br />} em profissionais da saúde
         </Footer>
       </Grid>
       <Background />
       <Lines>
-        <Tilt tiltEnable={!isMobile} perspective={1000} gyroscope={true} trackOnWindow={true} transitionSpeed={1000}/>
+        <Tilt
+          tiltEnable={!isMobile}
+          perspective={1000}
+          gyroscope={true}
+          trackOnWindow={true}
+          transitionSpeed={1000}
+        />
       </Lines>
     </Wrapper>
   );
@@ -98,39 +104,46 @@ function Modal() {
   } = useForm();
 
   const handleOnSubmit = async (data) => {
-    try {      
-      await api.post(`/pre-registration`, data);    
-    } catch (error) {      
-    }
-    hideModal()
+    try {
+      await api.post(`/pre-registration`, data);
+    } catch (error) {}
+    hideModal();
     alertDialog({
-      type: 'Alert',
-      title: 'Prontinho!',
-      message: 'Aguarde nosso contato =)'
-    })
+      type: "Alert",
+      title: "Prontinho!",
+      message: "Aguarde nosso contato =)",
+    });
   };
 
   return (
     <>
-    <TextModal>Se inscreva para receber seu orçamento sem compromisso e ganhe <b>10% de desconto + uma mentoria exclusiva</b>, caso queira turbinar suas redes sociais com a gente. As vagas são limitadas, então corre!</TextModal>
-    <Form onSubmit={handleSubmit(handleOnSubmit)}>
-      <GroupInput>
-        <Label>Nome:</Label>
-        <Input height="38px" {...register("name", { required: true })} />
-        {errors.name && <Error secondary>Por favor preencha o Nome.</Error>}
-      </GroupInput>
-      <GroupInput>
-        <Label>Whatsapp:</Label>
-        <Input height="38px" {...register("whatsapp", { required: true })} />
-        {errors.whatsapp && <Error secondary>Por favor preencha o Whatsapp.</Error>}
-      </GroupInput>
-      <GroupInput>
-        <Label>Email:</Label>
-        <Input height="38px" {...register("email")} />
-      </GroupInput>
-      <InformationTextModal>*Promoção válida até 30/10/2021 ou até as vagas se esgotarem.</InformationTextModal>
-      <ButtonModal>Enviar</ButtonModal>
-    </Form>
+      <TextModal>
+        Se inscreva para receber seu orçamento sem compromisso e ganhe{" "}
+        <b>10% de desconto + uma mentoria exclusiva</b>, caso queira turbinar
+        suas redes sociais com a gente. As vagas são limitadas, então corre!
+      </TextModal>
+      <Form onSubmit={handleSubmit(handleOnSubmit)}>
+        <GroupInput>
+          <Label>Nome:</Label>
+          <Input height="38px" {...register("name", { required: true })} />
+          {errors.name && <Error secondary>Por favor preencha o Nome.</Error>}
+        </GroupInput>
+        <GroupInput>
+          <Label>Whatsapp:</Label>
+          <Input height="38px" {...register("whatsapp", { required: true })} />
+          {errors.whatsapp && (
+            <Error secondary>Por favor preencha o Whatsapp.</Error>
+          )}
+        </GroupInput>
+        <GroupInput>
+          <Label>Email:</Label>
+          <Input height="38px" {...register("email")} />
+        </GroupInput>
+        <InformationTextModal>
+          *Promoção válida até 30/10/2021 ou até as vagas se esgotarem.
+        </InformationTextModal>
+        <ButtonModal>Enviar</ButtonModal>
+      </Form>
     </>
   );
 }
