@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { useEffect, useState } from 'react'
+import Link from "next/link";
+import { useRouter } from "next/router"
 
 import {
   Background,
@@ -33,6 +34,7 @@ import {
 
 export default function Home() {
   const [androidBrowser, setAndroidBrowser] = useState(true)
+  const router = useRouter()
 
   const handlePreRegister = () => {
     showModal({
@@ -45,6 +47,13 @@ export default function Home() {
   useEffect(() => {
     setAndroidBrowser(isAndroid)
   },[isAndroid])
+
+  useEffect(() => {
+    const { q } = router.query
+    if (q === 'pre-cadastro') {
+      handlePreRegister()
+    }
+  },[router.query])
 
   return (
     <Wrapper>
