@@ -1,18 +1,18 @@
-import styled, { createGlobalStyle, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Grid = styled.div`
-    width: 100%;
-    height: 100vh;
-    padding: 32px;
-    display: grid;
-    grid-template-rows: repeat(3, auto) 1fr auto;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-    color: #ffffff;
-    overflow-y: auto;
-`
+  width: 100%;
+  height: 100vh;
+  padding: 32px;
+  display: grid;
+  grid-template-rows: repeat(3, auto) 1fr auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  color: #ffffff;
+  overflow-y: auto;
+`;
 
 export const Image = styled.div`
   width: 128px;
@@ -26,24 +26,20 @@ export const Image = styled.div`
     height: 100%;
     object-fit: cover;
   }
-`
+`;
 
-export const Name = styled.h1`
-    
-`
+export const Name = styled.h1``;
 
-export const Description = styled.p`
-    
-`
+export const Description = styled.p``;
 
 export const WrapperButtons = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const onHoverItem = keyframes`
   0% {
@@ -67,37 +63,35 @@ export const onHoverItem = keyframes`
   80% {
     transform: scale(1);
   }    
-`
+`;
 
 export const Button = styled.a`
-    flex: 1;
-    width: 100%;
-    background: #ffffff;
-    margin-bottom: 20px;
-    font-size: 18px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #000000;
-    padding: 10px 0;
-    max-height: 100px;
-    
-    &:last-child {
-        margin-bottom: 0px;
-    }
+  flex: 1;
+  width: 100%;
+  background: #ffffff;
+  margin-bottom: 20px;
+  font-size: 18px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+  padding: 10px 0;
+  max-height: 100px;
 
-    &:hover {
-        animation: ${onHoverItem} 1.2s linear infinite;
-    }
+  &:last-child {
+    margin-bottom: 0px;
+  }
 
-    & > svg {
-        height: 20px;
-        margin-right: 6px;
-    }
-`
+  &:hover {
+    animation: ${onHoverItem} 1.2s linear infinite;
+  }
 
-export const Footer = styled.h3`
-    
-`
+  & > svg {
+    height: 20px;
+    margin-right: 6px;
+  }
+`;
+
+export const Footer = styled.h3``;

@@ -5,7 +5,7 @@ import { Container, Username, Logo, List, CloseButton } from "./style";
 import { Close } from "@styled-icons/material";
 
 const Sidebar = (props) => {
-  const { handleToogleSidebar } = props
+  const { handleToogleSidebar } = props;
   const router = useRouter();
 
   return (

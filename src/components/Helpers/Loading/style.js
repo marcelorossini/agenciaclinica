@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes, css } from "styled-components";
 
 const SpinnerAnimation = keyframes`
   from {
@@ -7,7 +7,7 @@ const SpinnerAnimation = keyframes`
   to {
     transform: rotate(360deg);
   }
-`
+`;
 
 export const fadeIn = keyframes`
   0% {
@@ -19,7 +19,7 @@ export const fadeIn = keyframes`
     display: block;
     z-index: 900;
   }
-`
+`;
 
 export const fadeOut = keyframes`
   0% {
@@ -33,7 +33,7 @@ export const fadeOut = keyframes`
     display: none;
     z-index: -900;
   }
-`
+`;
 
 export const Container = styled.div`
   background: #ffffff90;
@@ -48,14 +48,14 @@ export const Container = styled.div`
     if (active === true)
       return css`
         animation: ${fadeIn} 0.2s forwards;
-      `
+      `;
     else if (active === false)
       return css`
         animation: ${fadeOut} 0.2s forwards;
-      `
-    else return 'display: none;'
+      `;
+    else return "display: none;";
   }}
-`
+`;
 
 export const Wrapper = styled.div`
   user-select: none;
@@ -65,9 +65,9 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   & > svg {
-    width: ${({ width }) => width || '64px'};
-    margin: ${({ margin }) => margin || '12px'};
+    width: ${({ width }) => width || "64px"};
+    margin: ${({ margin }) => margin || "12px"};
     animation: 1.5s linear ${SpinnerAnimation} infinite;
     color: var(--color-primary);
   }
-`
+`;

@@ -9,11 +9,11 @@ export const Container = styled.div`
   grid-template-areas: "Sidebar Navbar" "Sidebar Wrapper";
   @media (min-width: 768px) {
     grid-template-columns: 280px 1fr;
-  }  
+  }
 `;
 
 export const Wrapper = styled.div`
-    grid-area: Wrapper;
-    padding: 24px 24px;
-    overflow-y: scroll;
+  grid-area: Wrapper;
+  padding: 24px 24px;
+  overflow-y: scroll;
 `;

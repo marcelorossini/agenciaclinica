@@ -22,10 +22,7 @@ const Cliente = () => {
   const [title, setTitle] = useState("");
 
   const { id } = router.query;
-  const {
-    register,
-    setValue,
-  } = useForm();
+  const { register, setValue } = useForm();
 
   useEffect(() => {
     if (!id) return;
@@ -52,7 +49,6 @@ const Cliente = () => {
     handle();
   }, [id]);
 
-
   const handleOnDelete = () => {
     alertDialog({
       type: "Confirm",
@@ -78,16 +74,16 @@ const Cliente = () => {
       <Form>
         <GroupInput labelSize="100px">
           <Label>Nome:</Label>
-          <Input {...register("name")} readOnly={true}/>
+          <Input {...register("name")} readOnly={true} />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Whatsapp:</Label>
-          <Input {...register("whatsapp")} readOnly={true}/>
-        </GroupInput>    
+          <Input {...register("whatsapp")} readOnly={true} />
+        </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Email:</Label>
-          <Input {...register("email")} readOnly={true}/>
-        </GroupInput>    
+          <Input {...register("email")} readOnly={true} />
+        </GroupInput>
         <GroupButtons gap="12px">
           <Button
             type="button"

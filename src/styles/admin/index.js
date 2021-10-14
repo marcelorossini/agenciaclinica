@@ -17,7 +17,9 @@ export const Error = styled.p`
   margin: 2px 0;
   color: #ffffff;
 
-  ${({ secondary }) => secondary && `
+  ${({ secondary }) =>
+    secondary &&
+    `
     color: red;
   `}
 `;
@@ -91,7 +93,6 @@ export const GroupInput = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
-
 
   @media (min-width: 768px) {
     ${({ labelSize }) =>

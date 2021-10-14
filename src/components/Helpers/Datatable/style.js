@@ -5,7 +5,7 @@ export const Container = styled(DataTable)`
   & .rdt_TableCol {
     font-size: 16px;
     font-weight: bold;
-    color: var(--color-primary)
+    color: var(--color-primary);
   }
 
   & .rdt_TableCell {
@@ -22,4 +22,4 @@ export const Container = styled(DataTable)`
 export const Empty = styled.div`
   min-height: 100px;
   cursor: pointer;
-`
+`;

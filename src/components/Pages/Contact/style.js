@@ -10,14 +10,14 @@ export const Grid = styled.div`
   justify-content: center;
   text-align: center;
   padding: 40px;
-`
+`;
 
 export const GridSocialLinks = styled.div`
   width: 100%;
   max-width: 320px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
 
   @media (min-width: 576px) {
     max-width: 740px;
@@ -46,11 +46,11 @@ export const onHoverItem = keyframes`
   80% {
     transform: scale(1);
   }    
-`
+`;
 
 export const Item = styled.a`
   cursor: pointer;
-  
+
   & > svg {
     width: 56px;
     color: var(--color-secondary) !important;
@@ -88,8 +88,8 @@ export const Footer = styled.p`
   @media (min-width: 768px) {
     font-size: 24px;
   }
-`
+`;
 
 export const Title = styled.div`
   color: #ffffff;
-`
+`;

@@ -16,11 +16,9 @@ import {
   Select,
   CheckBox,
   GroupButtons,
-  Error
+  Error,
 } from "../../../../styles/admin/index";
-import {
-  UploaderImageGallery,
-} from "../../../../components/Helpers/Uploader";
+import { UploaderImageGallery } from "../../../../components/Helpers/Uploader";
 
 const Cliente = () => {
   const router = useRouter();
@@ -64,7 +62,7 @@ const Cliente = () => {
         alertDialog({
           type: "Alert",
           title: `Erro`,
-          message: `Erro, tente novamente`
+          message: `Erro, tente novamente`,
         });
       }
       setIsLoading(false);
@@ -89,7 +87,7 @@ const Cliente = () => {
       alertDialog({
         type: "Alert",
         title: `Erro`,
-        message: `Erro, tente novamente`
+        message: `Erro, tente novamente`,
       });
     }
   };
@@ -124,7 +122,10 @@ const Cliente = () => {
       <Form onSubmit={handleSubmit(handleOnSubmit)}>
         <GroupInput labelSize="100px">
           <Label>Empresa:</Label>
-          <Select defaultValue="agencia" {...register("company", { required: true })}>
+          <Select
+            defaultValue="agencia"
+            {...register("company", { required: true })}
+          >
             <option value="agencia">Agência Clínica</option>
             <option value="plim">Plim Soluções Criativas</option>
           </Select>
@@ -143,7 +144,9 @@ const Cliente = () => {
         <GroupInput labelSize="100px">
           <Label>Descrição:</Label>
           <Input {...register("description", { required: true })} />
-          {errors.description && <Error secondary>Preencha o campo Descrição.</Error>}
+          {errors.description && (
+            <Error secondary>Preencha o campo Descrição.</Error>
+          )}
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Telefone:</Label>

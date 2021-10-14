@@ -6,8 +6,8 @@ export const Container = styled.div`
   width: 100%;
   position: relative;
   max-width: calc(${maxWidth}px + 100px);
-  margin: 0 auto;  
-`
+  margin: 0 auto;
+`;
 
 export const Component = styled(Carousel)`
   max-width: ${maxWidth}px;
@@ -17,7 +17,7 @@ export const Component = styled(Carousel)`
 const widthArrow = 64;
 export const ArrowButton = styled.button`
   width: ${widthArrow}px;
-  height: 100%;  
+  height: 100%;
   position: absolute;
   top: -20px;
   ${({ left }) => left && "left: -15px;"}

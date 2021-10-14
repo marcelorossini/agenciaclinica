@@ -5,11 +5,7 @@
     "node": true
   },
   "parser": "babel-eslint",
-  "extends": [
-    "plugin:react/recommended",
-    "next",
-    "prettier"
-  ],
+  "extends": ["plugin:react/recommended", "next", "prettier"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -17,10 +13,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "plugins": ["react", "prettier", "better-styled-components"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

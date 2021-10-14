@@ -4,7 +4,7 @@ import { ArrowIosBack, ArrowIosForward } from "@styled-icons/evaicons-solid";
 
 const Slider = (props) => {
   const { children, ...restOfProps } = props;
-  
+
   const responsive = {
     desktop: {
       breakpoint: { max: 5000, min: 768 },
@@ -19,17 +19,17 @@ const Slider = (props) => {
 
   return (
     <Container>
-    <Component
-      infinite={true}
-      responsive={responsive}
-      keyBoardControl={true}
-      customButtonGroup={<ButtonGroup />}
-      arrows={false} 
-      renderButtonGroupOutside={true} 
-      {...restOfProps}
-    >
-      {children}
-    </Component>
+      <Component
+        infinite={true}
+        responsive={responsive}
+        keyBoardControl={true}
+        customButtonGroup={<ButtonGroup />}
+        arrows={false}
+        renderButtonGroupOutside={true}
+        {...restOfProps}
+      >
+        {children}
+      </Component>
     </Container>
   );
 };

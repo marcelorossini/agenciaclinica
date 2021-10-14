@@ -13,7 +13,9 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>Agência Clinica  - Marketing Digital para Profissionais da Saúde</title>
+        <title>
+          Agência Clinica - Marketing Digital para Profissionais da Saúde
+        </title>
       </Head>
       <Page backgroundColor="var(--color-primary)" fixMinHeightIos={true}>
         <Home />
@@ -30,7 +32,7 @@ export default function Index() {
       <Page id="contato" backgroundColor="var(--color-tertiary)">
         <Contact />
       </Page>
-      <FloatButton/>
+      <FloatButton />
     </>
   );
 }

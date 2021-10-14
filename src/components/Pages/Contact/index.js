@@ -1,7 +1,7 @@
 import { Grid, GridSocialLinks, Item, Title, Footer } from "./style";
 
 import { Facebook, Instagram, Whatsapp } from "@styled-icons/boxicons-logos";
-import { Location } from '@styled-icons/ionicons-outline/'
+import { Location } from "@styled-icons/ionicons-outline/";
 
 export default function Home() {
   return (
@@ -24,15 +24,9 @@ export default function Home() {
         </Item>
       </GridSocialLinks>
       <div>
-        <Footer>
-          Aryane Toffetti | (14) 99181-4270
-        </Footer>
-        <Footer>
-          Rua Paissandu, Nº 333, Sala 3 - Centro - Jaú/SP
-        </Footer>
-        <Footer>
-          contato@agenciaclinica.com.br
-        </Footer>
+        <Footer>Aryane Toffetti | (14) 99181-4270</Footer>
+        <Footer>Rua Paissandu, Nº 333, Sala 3 - Centro - Jaú/SP</Footer>
+        <Footer>contato@agenciaclinica.com.br</Footer>
       </div>
     </Grid>
   );

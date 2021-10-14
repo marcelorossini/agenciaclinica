@@ -29,7 +29,7 @@ const Clientes = () => {
     },
     {
       name: "Exibe na página inicial?",
-      selector: (row) => row.show ? 'Sim' : 'Não',
+      selector: (row) => (row.show ? "Sim" : "Não"),
     },
   ];
 

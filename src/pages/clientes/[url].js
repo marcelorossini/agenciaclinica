@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Head from "next/head";
 import { useEffect } from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 import {
   Facebook,
@@ -15,7 +15,7 @@ import { Location } from "@styled-icons/ionicons-outline";
 import { Web } from "@styled-icons/foundation";
 
 import Page from "../../components/Helpers";
-import api from '../../services/api'
+import api from "../../services/api";
 
 import {
   Grid,
@@ -28,8 +28,8 @@ import {
 } from "../../styles/clientes";
 
 export async function getServerSideProps(context) {
-  const { url } = context.query
-  const response = await api.get(`customer/${url}?field=url`)  
+  const { url } = context.query;
+  const response = await api.get(`customer/${url}?field=url`);
 
   return {
     props: {
@@ -60,19 +60,23 @@ const Clientes = ({ data }) => {
 
   useEffect(() => {
     if (!url) {
-      router.replace('/')
+      router.replace("/");
     }
-  }, [url])
+  }, [url]);
 
   return (
     <>
       <Head>
         <title>{name} - Agência Clinica</title>
       </Head>
-      <Page backgroundImage={background_image} backgroundColor={'var(--color-primary)'} fixMinHeightIos={true}>
+      <Page
+        backgroundImage={background_image}
+        backgroundColor={"var(--color-primary)"}
+        fixMinHeightIos={true}
+      >
         <Grid>
           <Image>
-            <img src={profile_image} alt=""/>
+            <img src={profile_image} alt="" />
           </Image>
           <Name>{name}</Name>
           <Description>{description}</Description>
@@ -123,7 +127,11 @@ const Clientes = ({ data }) => {
               </Button>
             )}
           </WrapperButtons>
-          <Footer>{company === 'agencia' ? 'Agência de Marketing @agenciaclinica' : '💡 Agência de Marketing @soluplim' }</Footer>
+          <Footer>
+            {company === "agencia"
+              ? "Agência de Marketing @agenciaclinica"
+              : "💡 Agência de Marketing @soluplim"}
+          </Footer>
         </Grid>
       </Page>
     </>

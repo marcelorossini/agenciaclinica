@@ -12,27 +12,32 @@ export const Background = styled.div`
   background-repeat: no-repeat !important;
   background-position: left !important;
   z-index: 0;
-  opacity: 0.4;  
+  opacity: 0.4;
 
   @media (min-width: 768px) {
     background: url("/assets/background-1080.png");
   }
-  
+
   @media (min-width: 1024px) {
-    mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 50%, rgba(255,255,255,0) 70%);
+    mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.75) 50%,
+      rgba(255, 255, 255, 0) 70%
+    );
   }
-  
+
   @media (min-width: 1920px) {
     background: url("/assets/background-1440.png");
-  }  
+  }
 
   @media (min-width: 2560px) {
     background: url("/assets/background-2160.png");
-  }  
+  }
 
-  @media not all and (min-resolution: .001dpcm) {
-    @supports (-webkit-appearance:none) and (stroke-color: transparent) {
-        min-height: -webkit-fill-available;       
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+      min-height: -webkit-fill-available;
     }
   }
 `;
@@ -63,7 +68,9 @@ export const Grid = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto auto;
 
-  ${({ paddingHome }) => paddingHome && `
+  ${({ paddingHome }) =>
+    paddingHome &&
+    `
     padding-bottom: 60px;
   `}
 `;
@@ -77,7 +84,7 @@ export const Logo = styled.div`
     width: 100%;
     //max-width: 256px;
     position: relative;
-    z-index: 500;  
+    z-index: 500;
   }
 
   @media (min-width: 576px) {
@@ -106,7 +113,7 @@ export const Logo = styled.div`
 export const Navbar = styled.nav`
   display: flex;
   justify-content: center;
-  @media (min-width: 576px) { 
+  @media (min-width: 576px) {
     justify-content: flex-end;
   }
 `;
@@ -120,7 +127,7 @@ export const Footer = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 500;  
+  z-index: 500;
   & > h1 {
     font-weight: 400;
   }
@@ -134,12 +141,12 @@ export const NavbarItem = styled.div`
   color: #ffffff;
   margin: 0 24px 0 0;
   position: relative;
-  z-index: 500;  
+  z-index: 500;
   &:last-child {
     margin: 0;
   }
   &:hover {
-    text-shadow: 0px 0px 20px rgb(255,255,255,0.5);
+    text-shadow: 0px 0px 20px rgb(255, 255, 255, 0.5);
   }
 `;
 
@@ -178,7 +185,7 @@ export const Button = styled.div`
   animation: ${animationButton} 2s linear infinite;
   cursor: pointer;
   position: relative;
-  z-index: 500;  
+  z-index: 500;
 
   &:hover {
     filter: brightness(110%);
@@ -194,11 +201,11 @@ export const TextModal = styled.div`
   font-size: 16px;
   padding-bottom: 20px;
   text-align: justify;
-`
+`;
 
 export const InformationTextModal = styled.div`
   width: 100%;
   align-self: flex-start;
   font-size: 14px;
   padding: 10px 0;
-`
+`;

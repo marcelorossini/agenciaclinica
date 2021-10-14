@@ -1,16 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect } from 'react';
-import { useRouter } from 'next/router'
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-import { logout } from '../../services/auth'
+import { logout } from "../../services/auth";
 
 const Logout = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
-      logout()
-      router.replace('/')
-  },[])
+    logout();
+    router.replace("/");
+  }, []);
 
   return <></>;
 };

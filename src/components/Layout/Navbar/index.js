@@ -15,7 +15,7 @@ const Navbar = (props) => {
         <Menu />
       </ButtonMenu>
       <ArrowBack onClick={() => router.back()} />
-      { title || "Aryane Toffetti"}
+      {title || "Aryane Toffetti"}
     </Container>
   );
 };

@@ -8,11 +8,11 @@ export const Grid = styled.div`
   grid-template-rows: auto 1fr;
   align-items: center;
   justify-content: center;
-`
+`;
 
 export const Item = styled.a`
   width: 100%;
-  cursor: pointer;  
+  cursor: pointer;
   display: grid;
   text-align: center;
   position: relative;
@@ -25,14 +25,14 @@ export const CostumerImage = styled.div`
   overflow: hidden;
   border-radius: 100%;
   margin: 0 auto;
-  transform: scale(.9);
+  transform: scale(0.9);
 
-  @media (min-width: 576px) { 
+  @media (min-width: 576px) {
     width: 100px;
     height: 100px;
   }
 
-  @media (min-width: 768px) { 
+  @media (min-width: 768px) {
     width: 180px;
     height: 180px;
   }
@@ -46,21 +46,21 @@ export const CostumerImage = styled.div`
   &:hover {
     transform: scale(1);
   }
-`
+`;
 
 export const CostumerName = styled.p`
   display: block;
   color: #ffffff;
   font-weight: bold;
   padding: 10px 0 0 0;
-`
+`;
 
 export const CostumerOccupation = styled.p`
   height: 20px;
   display: block;
   color: #ffffff;
-`
+`;
 
 export const Title = styled.div`
   color: #ffffff;
-`
+`;

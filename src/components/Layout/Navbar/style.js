@@ -14,10 +14,10 @@ export const Container = styled.div`
   z-index: 100;
 
   & svg {
-      height: 18px;
-      margin-right: 12px;
-      color: var(--color-text-primary);
-      cursor: pointer;
+    height: 18px;
+    margin-right: 12px;
+    color: var(--color-text-primary);
+    cursor: pointer;
   }
 `;
 
@@ -27,4 +27,4 @@ export const ButtonMenu = styled.button`
   @media (min-width: 768px) {
     display: none;
   }
-`
+`;

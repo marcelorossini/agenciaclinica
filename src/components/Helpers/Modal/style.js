@@ -1,6 +1,6 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes, css } from "styled-components";
 
-import { Close } from '@styled-icons/ionicons-outline'
+import { Close } from "@styled-icons/ionicons-outline";
 
 export const fadeIn = keyframes`
   0% {
@@ -12,7 +12,7 @@ export const fadeIn = keyframes`
     display: block;
     z-index: 1100;
   }
-`
+`;
 
 export const fadeOut = keyframes`
   0% {
@@ -26,7 +26,7 @@ export const fadeOut = keyframes`
     display: none;
     z-index: -1100;
   }
-`
+`;
 
 export const Container = styled.div`
   position: fixed;
@@ -45,14 +45,14 @@ export const Container = styled.div`
     if (active === true)
       return css`
         animation: ${fadeIn} 0.15s forwards;
-      `
+      `;
     else if (active === false)
       return css`
         animation: ${fadeOut} 0.15s forwards;
-      `
-    else return 'display: none;'
+      `;
+    else return "display: none;";
   }}
-`
+`;
 
 export const animationSlideUp = keyframes`
   0% {
@@ -63,7 +63,7 @@ export const animationSlideUp = keyframes`
       opacity: 1;
       transform: translateY(0);
   }
-`
+`;
 
 export const Wrapper = styled.div`
   display: grid;
@@ -85,10 +85,10 @@ export const Wrapper = styled.div`
   @media (min-width: 768px) {
     margin: 24px;
     height: auto;
-    max-width: ${({ maxWidth }) => maxWidth || '600px'};
+    max-width: ${({ maxWidth }) => maxWidth || "600px"};
     max-height: 80%;
   }
-`
+`;
 
 export const Header = styled.div`
   display: flex;
@@ -99,7 +99,7 @@ export const Header = styled.div`
   @media (min-width: 768px) {
     margin: 0 12px;
   }
-`
+`;
 
 export const Main = styled.div`
   flex: auto;
@@ -108,7 +108,7 @@ export const Main = styled.div`
   font-size: 14px;
   padding: 20px;
   color: var(--color-text-primary);
-`
+`;
 
 export const Title = styled.div`
   font-size: 18px;
@@ -116,18 +116,18 @@ export const Title = styled.div`
   font-weight: bold;
   color: var(--color-primary);
   text-align: center;
-`
+`;
 
 export const ButtonClose = styled.button`
   position: absolute;
   right: 0;
   padding: 12px;
-`
+`;
 
 export const CloseIcon = styled(Close)`
   width: 32px;
   color: var(--color-primary);
-`
+`;
 
 export const BackgroundClose = styled.div`
   position: fixed;
@@ -136,4 +136,4 @@ export const BackgroundClose = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: 1150;
-`
+`;

@@ -1,34 +1,34 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-import { token } from '../services/auth'
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { token } from "../services/auth";
 
 const withAuth = (WrapperComponent, logged = true) => {
-  const Wrapper = props => {
-    const router = useRouter()
+  const Wrapper = (props) => {
+    const router = useRouter();
 
     useEffect(() => {
       // Pega token
-      const tokenData = token()
+      const tokenData = token();
 
       // Se usuários já estiverem logados, não permitem o acesso a página
       if (!logged) {
         // Se existir o token redireciona para página inicial
-        if (tokenData) router.replace('/admin')
-        return
+        if (tokenData) router.replace("/admin");
+        return;
       }
 
       // Se existir o token
       if (tokenData) {
-        return
+        return;
       }
 
       // Redireciona
-      router.replace('/admin/login')
-    }, [])
-    return <WrapperComponent {...props} />
-  }
+      router.replace("/admin/login");
+    }, []);
+    return <WrapperComponent {...props} />;
+  };
 
-  return Wrapper
-}
+  return Wrapper;
+};
 
-export default withAuth
+export default withAuth;

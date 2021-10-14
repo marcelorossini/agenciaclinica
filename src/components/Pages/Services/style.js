@@ -5,7 +5,7 @@ export const Grid = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const List = styled.div`
   width: 100%;
@@ -49,10 +49,10 @@ export const Item = styled.div`
 export const Image = styled.img`
   width: 48px;
   height: inherit;
-  
-  @media (min-width: 414px) {      
+
+  @media (min-width: 414px) {
     width: 64px;
-  }  
+  }
 
   @media (min-width: 576px) {
     width: 90px;
@@ -67,7 +67,7 @@ export const Image = styled.img`
 
 export const Label = styled.strong`
   color: #888888;
-  
+
   @media (min-width: 768px) {
     width: 164px;
     text-align: center;
@@ -75,9 +75,9 @@ export const Label = styled.strong`
 `;
 
 export const Title = styled.div`
-  color: #00A499;
+  color: #00a499;
   padding-bottom: 36px;
   @media (min-width: 768px) {
     padding-bottom: 0px;
   }
-`
+`;

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -80,7 +80,9 @@ export default function Home() {
         </Button>
 
         <Footer>
-          <h1 className="fontSizeSecondary">Agência especializada {isMobile && <br/>} em profissionais da saúde</h1>
+          <h1 className="fontSizeSecondary">
+            Agência especializada {isMobile && <br />} em profissionais da saúde
+          </h1>
         </Footer>
       </Grid>
       <Background />

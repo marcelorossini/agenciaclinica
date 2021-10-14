@@ -2,7 +2,13 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 
-import { Button, Form, Input, Error, GroupInput } from "../../styles/admin/index";
+import {
+  Button,
+  Form,
+  Input,
+  Error,
+  GroupInput,
+} from "../../styles/admin/index";
 import { Wrapper, Box, Logo } from "../../styles/admin/login";
 
 import api from "../../services/api";
@@ -14,10 +20,7 @@ const Login = () => {
   const router = useRouter();
   const [error, setError] = useState("");
 
-  const {
-    register,
-    handleSubmit,
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
     setError("");
