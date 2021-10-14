@@ -63,7 +63,7 @@ export const Grid = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto auto;
 
-  ${({ isAndroid }) => isAndroid && `
+  ${({ paddingHome }) => paddingHome && `
     padding-bottom: 60px;
   `}
 `;
