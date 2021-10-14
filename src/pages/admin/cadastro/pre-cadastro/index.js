@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import api from "../../../../services/api";
 import withAuth from "../../../../utils/withAuth";
 
 import Layout from "../../../../components/Layout";
 import Datatable from "../../../../components/Helpers/Datatable";
-import { Button } from "../../../../styles/admin/index";
 
 const PreCadastro = () => {
   const [data, setData] = useState([]);

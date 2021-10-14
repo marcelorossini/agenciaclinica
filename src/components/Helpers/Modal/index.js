@@ -52,7 +52,7 @@ export const showModal = props => {
   render(<Modal {...props} callbackActive={null || callback} />, divModal)
 }
 
-export const hideModal = props => {
+export const hideModal = () => {
   const divModal = document.getElementById('modal')
   divModal.remove()
 }

@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const Grid = styled.div`
   width: 100%;

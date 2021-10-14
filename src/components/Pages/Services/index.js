@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Grid, List, Item, Image, Label, Title } from "./style";
 
 import { Wrapper } from "../../Helpers/style";

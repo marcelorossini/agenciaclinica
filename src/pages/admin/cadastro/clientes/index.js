@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import api from "../../../../services/api";

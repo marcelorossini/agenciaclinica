@@ -5,7 +5,6 @@ import {
   CostumerImage,
   CostumerName,
   CostumerOccupation,
-  ArrowButton,
 } from "./style";
 
 import { Wrapper } from "../../Helpers/style";

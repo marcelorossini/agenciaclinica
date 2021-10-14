@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
@@ -78,10 +79,9 @@ const Cliente = () => {
       auxData.profile_image = images.profileImage || null;
       // Imagem fundo
       auxData.background_image = images.backgroundImage || null;
-      let response;
-      if (id === "novo") response = await api.post(`/customer`, auxData);
+      if (id === "novo") await api.post(`/customer`, auxData);
       else {
-        response = await api.put(`/customer/${id}`, auxData);
+        await api.put(`/customer/${id}`, auxData);
       }
 
       router.push("/admin/cadastro/clientes");

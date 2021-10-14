@@ -4,22 +4,7 @@ import { ArrowIosBack, ArrowIosForward } from "@styled-icons/evaicons-solid";
 
 const Slider = (props) => {
   const { children, ...restOfProps } = props;
-  /*
-      customLeftArrow={
-        <ArrowButton left>
-          <div>
-            <ArrowIosBack />
-          </div>
-        </ArrowButton>
-      }
-      customRightArrow={
-        <ArrowButton right>
-          <div>
-            <ArrowIosForward />
-          </div>
-        </ArrowButton>
-      }
-*/
+  
   const responsive = {
     desktop: {
       breakpoint: { max: 5000, min: 768 },
@@ -51,11 +36,7 @@ const Slider = (props) => {
 
 export default Slider;
 
-const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-  const {
-    carouselState: { currentSlide },
-  } = rest;
-
+const ButtonGroup = ({ next, previous }) => {
   return (
     <div>
       <ArrowButton left onClick={() => previous()}>

@@ -26,7 +26,8 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
     "no-unused-vars": 1,
-    "camelcase": 1,
-    "react/jsx-key": "off"
+    "camelcase": 0,
+    "react/jsx-key": "off",
+    "@next/next/no-img-element": "off"
   }
 }

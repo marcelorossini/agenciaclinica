@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // NextJS
 import { useState, useEffect } from 'react'
 import { render } from 'react-dom'

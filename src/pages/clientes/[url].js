@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Head from "next/head";
 import { useEffect } from "react";
 import { useRouter } from 'next/router'
@@ -71,7 +72,7 @@ const Clientes = ({ data }) => {
       <Page backgroundImage={background_image} backgroundColor={'var(--color-primary)'} fixMinHeightIos={true}>
         <Grid>
           <Image>
-            <img src={profile_image} />
+            <img src={profile_image} alt=""/>
           </Image>
           <Name>{name}</Name>
           <Description>{description}</Description>
