@@ -90,6 +90,6 @@ export const Footer = styled.p`
   }
 `
 
-export const Title = styled.h1`
+export const Title = styled.div`
   color: #ffffff;
 `

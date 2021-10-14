@@ -69,8 +69,8 @@ export default function Home() {
           Faça aqui seu pré-cadastro {isMobile && <br/>} para o lançamento!
         </Button>
 
-        <Footer className="fontSizeSecondary">
-          Agência especializada {isMobile && <br/>} em profissionais da saúde
+        <Footer>
+          <h1 className="fontSizeSecondary">Agência especializada {isMobile && <br/>} em profissionais da saúde</h1>
         </Footer>
       </Grid>
       <Background />

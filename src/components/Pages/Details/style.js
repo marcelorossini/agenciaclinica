@@ -69,7 +69,7 @@ export const Divider = styled.div`
   background: #ffffff;
 `;
 
-export const Title = styled.strong`
+export const Title = styled.h2`
   color: #ffffff;
   display: block;
 
@@ -78,8 +78,9 @@ export const Title = styled.strong`
   }
 `;
 
-export const Description = styled.p`
+export const Description = styled.h3`
   align-self: start;
   color: #ffffff;
   display: block;
+  font-weight: 400;
 `;

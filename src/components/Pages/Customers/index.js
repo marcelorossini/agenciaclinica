@@ -8,8 +8,6 @@ import {
   ArrowButton,
 } from "./style";
 
-
-
 import { Wrapper } from "../../Helpers/style";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
@@ -29,7 +27,9 @@ export default function Customers() {
   return (
     <Wrapper>
       <Grid>
-        <Title className="fontTitle">clientes</Title>
+        <Title>
+          <h1 className="fontTitle">clientes</h1>
+        </Title>
         {data.length > 0 && (
           <Slider>
             {data.map((item, index) => (
@@ -49,4 +49,3 @@ export default function Customers() {
     </Wrapper>
   );
 }
-

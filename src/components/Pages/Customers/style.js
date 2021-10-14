@@ -61,6 +61,6 @@ export const CostumerOccupation = styled.p`
   color: #ffffff;
 `
 
-export const Title = styled.h1`
+export const Title = styled.div`
   color: #ffffff;
 `

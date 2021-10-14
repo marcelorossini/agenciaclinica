@@ -121,6 +121,9 @@ export const Footer = styled.div`
   align-items: center;
   position: relative;
   z-index: 500;  
+  & > h1 {
+    font-weight: 400;
+  }
 
   @media (min-width: 568px) {
     min-height: 56px;

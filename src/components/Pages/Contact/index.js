@@ -6,7 +6,9 @@ import { Location } from '@styled-icons/ionicons-outline/'
 export default function Home() {
   return (
     <Grid>
-      <Title className="fontTitle">entre em contato:</Title>
+      <Title>
+        <h1 className="fontTitle">entre em contato:</h1>
+      </Title>
       <GridSocialLinks>
         <Item href={process.env.NEXT_PUBLIC_WHATSAPP_URL} target="_blank">
           <Whatsapp />

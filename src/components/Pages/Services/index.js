@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <Wrapper>
       <Grid>
-        <Title className="fontTitle">
-          nossos serviços
+        <Title>
+          <h1 className="fontTitle">nossos serviços</h1> 
         </Title>
         <List>
           <Item>
