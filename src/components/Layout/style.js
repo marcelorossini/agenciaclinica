@@ -4,9 +4,12 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 0px 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas: "Sidebar Navbar" "Sidebar Wrapper";
+  @media (min-width: 768px) {
+    grid-template-columns: 280px 1fr;
+  }  
 `;
 
 export const Wrapper = styled.div`

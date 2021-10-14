@@ -5,7 +5,7 @@ import Layout from "../../components/Layout";
 const Admin = () => {
   return (
     <Layout title="Home">
-      
+      Olá, Aryane Toffetti!
     </Layout>
   );
 };

@@ -22,7 +22,12 @@ export const Image = styled.div`
   width: 100%;
 
   & > img {
-    width: 300px;
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    & > img {
+      width: 300px;
+    }
   }
   ${({ urlImage }) =>
     !urlImage &&

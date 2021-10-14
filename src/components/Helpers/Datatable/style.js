@@ -13,6 +13,10 @@ export const Container = styled(DataTable)`
     cursor: pointer;
     color: var(--color-text-primary);
   }
+  & .rdt_TableHeadRow {
+    min-height: 0px;
+    padding-bottom: 20px;
+  }
 `;
 
 export const Empty = styled.div`

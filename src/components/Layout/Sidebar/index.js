@@ -1,17 +1,26 @@
 import { useRouter } from "next/router";
 
 // Style
-import { Container, Username, Logo, List } from "./style";
+import { Container, Username, Logo, List, CloseButton } from "./style";
+import { Close } from "@styled-icons/material";
 
 const Sidebar = (props) => {
-  const router = useRouter()
-  
+  const { handleToogleSidebar } = props
+  const router = useRouter();
+
   return (
     <Container {...props}>
       <Username>Aryane Toffetti</Username>
-      <List>
-        <li onClick={() => router.push("/admin/cadastro/clientes")}>Clientes</li>
-        <li onClick={() => router.push("/admin/cadastro/pre-cadastro")}>Pré-cadastro</li>
+      <CloseButton onClick={() => handleToogleSidebar()}>
+        <Close />
+      </CloseButton>
+      <List onClick={() => handleToogleSidebar(false)}>
+        <li onClick={() => router.push("/admin/cadastro/clientes")}>
+          Clientes
+        </li>
+        <li onClick={() => router.push("/admin/cadastro/pre-cadastro")}>
+          Pré-cadastro
+        </li>
         <li onClick={() => router.push("/admin/logout")}>Sair</li>
       </List>
       <Logo>

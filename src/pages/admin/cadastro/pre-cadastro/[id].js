@@ -78,15 +78,15 @@ const Cliente = () => {
       <Form>
         <GroupInput labelSize="100px">
           <Label>Nome:</Label>
-          <Input {...register("name")} />
+          <Input {...register("name")} readOnly={true}/>
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Whatsapp:</Label>
-          <Input {...register("whatsapp")} />
+          <Input {...register("whatsapp")} readOnly={true}/>
         </GroupInput>    
         <GroupInput labelSize="100px">
           <Label>Email:</Label>
-          <Input {...register("email")} />
+          <Input {...register("email")} readOnly={true}/>
         </GroupInput>    
         <GroupButtons gap="12px">
           <Button

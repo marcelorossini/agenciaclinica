@@ -13,10 +13,18 @@ export const Container = styled.div`
   position: relative;
   z-index: 100;
 
-  & > svg {
+  & svg {
       height: 18px;
       margin-right: 12px;
       color: var(--color-text-primary);
       cursor: pointer;
   }
 `;
+
+export const ButtonMenu = styled.button`
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`

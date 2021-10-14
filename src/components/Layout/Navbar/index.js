@@ -1,16 +1,19 @@
 import { useRouter } from "next/router";
 
 // Style
-import { Container } from "./style";
+import { Container, ButtonMenu } from "./style";
 
-import { ArrowBack } from "@styled-icons/boxicons-regular";
+import { ArrowBack, Menu } from "@styled-icons/boxicons-regular";
 
 const Navbar = (props) => {
   const router = useRouter();
-  const { title } = props;
+  const { title, handleToogleSidebar } = props;
 
   return (
     <Container>
+      <ButtonMenu onClick={() => handleToogleSidebar()}>
+        <Menu />
+      </ButtonMenu>
       <ArrowBack onClick={() => router.back()} />
       { title || "Aryane Toffetti"}
     </Container>
