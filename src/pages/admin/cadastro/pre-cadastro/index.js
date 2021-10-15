@@ -23,14 +23,22 @@ const PreCadastro = () => {
     {
       name: "Nome",
       selector: (row) => row.name,
+      sortable: true,
+    },
+    {
+      name: "Status",
+      selector: (row) => row.status,
+      sortable: true,
     },
     {
       name: "Whatsapp",
       selector: (row) => row.whatsapp,
+      sortable: true,
     },
     {
       name: "Email",
       selector: (row) => row.email,
+      sortable: true,
     },
   ];
 

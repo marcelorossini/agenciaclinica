@@ -14,6 +14,8 @@ import {
   Label,
   GroupInput,
   GroupButtons,
+  Select,
+  Error,
 } from "../../../../styles/admin/index";
 
 const Cliente = () => {
@@ -22,7 +24,12 @@ const Cliente = () => {
   const [title, setTitle] = useState("");
 
   const { id } = router.query;
-  const { register, setValue } = useForm();
+  const {
+    register,
+    setValue,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   useEffect(() => {
     if (!id) return;
@@ -69,9 +76,22 @@ const Cliente = () => {
     });
   };
 
+  const handleOnSubmit = async (data) => {
+    try {
+      await api.put(`/pre-registration/${id}`, { status: data.status });
+      router.push("/admin/cadastro/pre-cadastro");
+    } catch (error) {
+      alertDialog({
+        type: "Alert",
+        title: `Erro`,
+        message: `Erro, tente novamente`,
+      });
+    }
+  };
+
   return (
     <Layout title={`Pré-cadastro: ${title}`} loading={isLoading}>
-      <Form>
+      <Form onSubmit={handleSubmit(handleOnSubmit)}>
         <GroupInput labelSize="100px">
           <Label>Nome:</Label>
           <Input {...register("name")} readOnly={true} />
@@ -84,7 +104,22 @@ const Cliente = () => {
           <Label>Email:</Label>
           <Input {...register("email")} readOnly={true} />
         </GroupInput>
+        <GroupInput labelSize="100px">
+          <Label>Status:</Label>
+          <Select defaultValue="Pendente" {...register("status", { required: true })}>
+            <option value=""></option>
+            <option value="Pendente">Pendente</option>
+            <option value="Reunião Marcada">Reunião Marcada</option>
+            <option value="Contrato fechado">Contrato fechado</option>
+            <option value="Não fechou">Não fechou</option>
+            <option value="Aguardando resposta">Aguardando resposta</option>
+          </Select>
+          {errors.status && <Error secondary>Preencha o campo Status.</Error>}
+        </GroupInput>
         <GroupButtons gap="12px">
+          <Button type="submit" widthDesktop="200px">
+            Salvar
+          </Button>
           <Button
             type="button"
             widthDesktop="200px"
