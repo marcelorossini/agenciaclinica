@@ -17,6 +17,10 @@ export const Container = styled(DataTable)`
     min-height: 0px;
     padding-bottom: 20px;
   }
+
+  & .rdt_TableCol_Sortable {
+    color: var(--color-primary);
+  }
 `;
 
 export const Empty = styled.div`
