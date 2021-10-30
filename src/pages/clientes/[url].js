@@ -71,7 +71,7 @@ const Clientes = ({ data }) => {
       </Head>
       <Page
         backgroundImage={background_image}
-        backgroundColor={"var(--color-primary)"}
+        backgroundColor={"#ffffff"}
         fixMinHeightIos={true}
       >
         <Grid>
