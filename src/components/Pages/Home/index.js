@@ -143,7 +143,7 @@ function Modal() {
           <Input height="38px" {...register("email")} />
         </GroupInput>
         <InformationTextModal>
-          *Promoção válida até 30/10/2021 ou até as vagas se esgotarem.
+          *Promoção válida até 30/12/2021 ou até as vagas se esgotarem.
         </InformationTextModal>
         <ButtonModal>Enviar</ButtonModal>
       </Form>
