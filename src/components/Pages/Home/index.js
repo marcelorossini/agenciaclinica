@@ -74,11 +74,11 @@ export default function Home() {
         <Logo>
           <img src="/assets/logo.svg" alt="logo" />
         </Logo>
-
+{/*
         <Button onClick={() => handlePreRegister()}>
           Faça aqui seu pré-cadastro {isMobile && <br />} para o lançamento!
         </Button>
-
+*/}
         <Footer>
           <h1 className="fontSizeSecondary">
             Agência especializada {isMobile && <br />} em profissionais da saúde
@@ -143,7 +143,7 @@ function Modal() {
           <Input height="38px" {...register("email")} />
         </GroupInput>
         <InformationTextModal>
-          *Promoção válida até 30/12/2021 ou até as vagas se esgotarem.
+          *Promoção válida até as vagas se esgotarem.
         </InformationTextModal>
         <ButtonModal>Enviar</ButtonModal>
       </Form>
