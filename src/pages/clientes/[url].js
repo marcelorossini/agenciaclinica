@@ -41,6 +41,7 @@ export async function getServerSideProps(context) {
 const Clientes = ({ data }) => {
   const {
     url,
+    html_page,
     company,
     profile_image,
     background_image,
@@ -55,7 +56,7 @@ const Clientes = ({ data }) => {
     linkedin,
     website,
     youtube,
-  } = data;
+  } = data || {};
   const router = useRouter();
 
   useEffect(() => {
@@ -63,6 +64,31 @@ const Clientes = ({ data }) => {
       router.replace("/");
     }
   }, [url]);
+
+  const hasHtmlPage = html_page && html_page.trim() !== "";
+
+  if (hasHtmlPage) {
+    return (
+      <>
+        <Head>
+          <title>{name || "Cliente"} - Agência Clinica</title>
+        </Head>
+        <iframe
+          title="Página do cliente"
+          srcDoc={html_page}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            border: "none",
+          }}
+          sandbox="allow-scripts allow-same-origin allow-forms"
+        />
+      </>
+    );
+  }
 
   return (
     <>

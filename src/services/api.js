@@ -2,7 +2,7 @@ import axios from "axios";
 import { token } from "./auth";
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3333/",
+  baseURL: process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:5007/",
   timeout: 5000,
 });
 

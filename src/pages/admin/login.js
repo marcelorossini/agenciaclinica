@@ -28,8 +28,16 @@ const Login = () => {
       const response = await api.post(`/login`, data);
       login(response.data);
       router.replace("/admin");
-    } catch (error) {
-      setError(error.response.data.message);
+    } catch (err) {
+      // Erro de rede (backend inacessível, CORS, etc.)
+      if (!err.response) {
+        setError(
+          "Não foi possível conectar ao servidor. Verifique se o backend está rodando em " +
+            (process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:5000")
+        );
+        return;
+      }
+      setError(err.response?.data?.message || err.message || "Erro ao fazer login.");
     }
   };
 

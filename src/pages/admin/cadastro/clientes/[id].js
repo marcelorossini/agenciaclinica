@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import api from "../../../../services/api";
 import withAuth from "../../../../utils/withAuth";
 
@@ -19,6 +19,7 @@ import {
   Error,
 } from "../../../../styles/admin/index";
 import { UploaderImageGallery } from "../../../../components/Helpers/Uploader";
+import HtmlEditor from "../../../../components/Helpers/HtmlEditor";
 
 const Cliente = () => {
   const router = useRouter();
@@ -32,6 +33,7 @@ const Cliente = () => {
     handleSubmit,
     setValue,
     getValues,
+    control,
     formState: { errors },
   } = useForm();
 
@@ -159,6 +161,15 @@ const Cliente = () => {
         <GroupInput labelSize="100px">
           <Label>Endereço:</Label>
           <Input {...register("address")} />
+        </GroupInput>
+        <GroupInput labelSize="100px">
+          <Label>Página HTML:</Label>
+          <Controller
+            name="html_page"
+            control={control}
+            defaultValue=""
+            render={({ field }) => <HtmlEditor {...field} />}
+          />
         </GroupInput>
         <GroupInput labelSize="100px">
           <Label>Whatsapp:</Label>
