@@ -1,5 +1,5 @@
 {
-  "name": "agencia_clinica",
+  "name": "nome-do-projeto",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,35 +10,34 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "components": "^0.1.0",
     "js-cookie": "^3.0.0",
-    "next": "11.1.0",
-    "react": "17.0.2",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-data-table-component": "^6.11.8",
     "react-device-detect": "^2.0.0",
-    "react-dom": "17.0.2",
     "react-dropzone": "^11.3.4",
     "react-hook-form": "^7.13.0",
     "react-multi-carousel": "^2.6.5",
     "react-parallax-tilt": "^1.5.66",
-    "resize-event": "^2.0.0",
-    "styled": "^1.0.0",
     "styled-components": "^5.3.0",
-    "styled-icons": "^10.37.0"
+    "@styled-icons/boxicons-logos": "^10.37.0",
+    "@styled-icons/boxicons-regular": "^10.37.0",
+    "@styled-icons/bootstrap": "^10.37.0",
+    "@styled-icons/evaicons-solid": "^10.37.0",
+    "@styled-icons/fluentui-system-filled": "^10.37.0",
+    "@styled-icons/foundation": "^10.37.0",
+    "@styled-icons/ionicons-outline": "^10.37.0",
+    "@styled-icons/material": "^10.37.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-next": "11.1.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-better-styled-components": "^1.1.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-promise": "^4.3.1",
-    "eslint-plugin-react": "^7.23.2",
-    "prettier": "^2.3.2",
-    "prettier-eslint": "^13.0.0"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

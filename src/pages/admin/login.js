@@ -29,7 +29,6 @@ const Login = () => {
       login(response.data);
       router.replace("/admin");
     } catch (err) {
-      // Erro de rede (backend inacessível, CORS, etc.)
       if (!err.response) {
         setError(
           "Não foi possível conectar ao servidor. Verifique se o backend está rodando em " +

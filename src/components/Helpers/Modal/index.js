@@ -1,8 +1,6 @@
-// NextJS
 import { useState, useEffect } from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 
-// Styles
 import {
   Container,
   Wrapper,
@@ -15,7 +13,6 @@ import {
 } from "./style";
 
 const Modal = (props) => {
-  // Props
   const {
     title,
     callbackActive,
@@ -25,7 +22,6 @@ const Modal = (props) => {
   } = props;
   const { close = true } = options;
 
-  // States
   const [active, setActive] = useState(null);
 
   useEffect(() => {
@@ -52,7 +48,7 @@ const Modal = (props) => {
 export default Modal;
 
 export const showModal = (props) => {
-  if (!process.browser) return;
+  if (typeof window === "undefined") return;
   let divModal = document.getElementById("modal");
   if (!divModal) {
     divModal = document.createElement("div");
@@ -60,14 +56,14 @@ export const showModal = (props) => {
     document.body.appendChild(divModal);
   }
 
-  // Callback
   const callback = new Date();
-
-  // Renderiza componente
-  render(<Modal {...props} callbackActive={null || callback} />, divModal);
+  const root = createRoot(divModal);
+  root.render(<Modal {...props} callbackActive={null || callback} />);
 };
 
 export const hideModal = () => {
   const divModal = document.getElementById("modal");
-  divModal.remove();
+  if (divModal) {
+    divModal.innerHTML = "";
+  }
 };

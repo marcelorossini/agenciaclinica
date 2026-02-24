@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
@@ -40,10 +39,8 @@ const Cliente = () => {
       try {
         const { data } = await api.get(`/pre-registration/${id}`);
 
-        // Title
         setTitle(data.name);
 
-        // Preenche valores
         Object.keys(data).forEach((item) => {
           setValue(item, data[item]);
         });

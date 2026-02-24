@@ -2,7 +2,7 @@ import { Grid, List, Item, Image, Label, Title } from "./style";
 
 import { Wrapper } from "../../Helpers/style";
 
-export default function Home() {
+export default function Services() {
   return (
     <Wrapper>
       <Grid>

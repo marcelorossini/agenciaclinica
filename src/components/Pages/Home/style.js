@@ -82,7 +82,6 @@ export const Logo = styled.div`
 
   & > img {
     width: 100%;
-    //max-width: 256px;
     position: relative;
     z-index: 500;
   }

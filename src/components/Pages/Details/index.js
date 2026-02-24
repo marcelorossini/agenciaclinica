@@ -10,7 +10,7 @@ import {
   Description,
 } from "./style";
 
-export default function Home() {
+export default function Details() {
   return (
     <Wrapper>
       <BackgroundItem backgroundColor="#2ea498" />

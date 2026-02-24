@@ -1,12 +1,8 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-// NextJS
 import { useState, useEffect } from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 
-// Helpers
 import { Button } from "../../../styles/admin/index";
 
-// Styles
 import {
   Container,
   Wrapper,
@@ -20,18 +16,14 @@ import {
 } from "./style";
 
 const Alert = (props) => {
-  // Props
   const { type, confirmAction, title, message, onClose } = props;
 
-  // States
   const [active, setActive] = useState(null);
 
-  // onLoad
   useEffect(() => {
     if (type) setActive(true);
   }, [props]);
 
-  // onClose
   useEffect(() => {
     if (active !== false) return;
     if (onClose) onClose();
@@ -70,11 +62,13 @@ const Alert = (props) => {
 export default Alert;
 
 export const alertDialog = (props) => {
+  if (typeof window === "undefined") return;
   let divAlertDialog = document.getElementById("alert-dialog");
   if (!divAlertDialog) {
     divAlertDialog = document.createElement("div");
     divAlertDialog.id = "alert-dialog";
     document.body.appendChild(divAlertDialog);
   }
-  render(<Alert {...props} />, divAlertDialog);
+  const root = createRoot(divAlertDialog);
+  root.render(<Alert {...props} />);
 };

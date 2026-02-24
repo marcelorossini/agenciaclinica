@@ -1,9 +1,9 @@
 import { Grid, GridSocialLinks, Item, Title, Footer } from "./style";
 
 import { Facebook, Instagram, Whatsapp } from "@styled-icons/boxicons-logos";
-import { Location } from "@styled-icons/ionicons-outline/";
+import { Location } from "@styled-icons/ionicons-outline";
 
-export default function Home() {
+export default function Contact() {
   return (
     <Grid>
       <Title>

@@ -22,10 +22,6 @@ export const ArrowButton = styled.button`
   top: -20px;
   ${({ left }) => left && "left: -15px;"}
   ${({ right }) => right && "right: -15px;"}  
-  /*
-  z-index: 1000;
-
-  */
 
   & > div {
     width: 100%;

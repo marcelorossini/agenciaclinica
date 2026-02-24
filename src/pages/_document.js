@@ -1,8 +1,6 @@
-// NextJS
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
-// GTM
 const GTM_TRACKING_ID = process.env.NEXT_PUBLIC_GTM;
 
 export default class MyDocument extends Document {

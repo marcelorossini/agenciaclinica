@@ -5,7 +5,6 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Loading from "../Helpers/Loading";
 
-// Style
 import { Container, Wrapper } from "./style";
 
 const Layout = (props) => {

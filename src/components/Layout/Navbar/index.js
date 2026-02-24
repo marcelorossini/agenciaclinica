@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 
-// Style
 import { Container, ButtonMenu } from "./style";
 
 import { ArrowBack, Menu } from "@styled-icons/boxicons-regular";

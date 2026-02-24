@@ -18,14 +18,11 @@ function MyApp({ Component, pageProps }) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
 
-        {/* Default */}
         <meta name="description" content={data.description} />
 
-        {/* Twitter */}
         <meta name="twitter:card" content="summary" key="twcard" />
         <meta name="twitter:creator" content={data.name} key="twhandle" />
 
-        {/* Open Graph */}
         <meta property="og:url" content={data.url} key="ogurl" />
         <meta property="og:image" content={data.image} key="ogimage" />
         <meta property="og:site_name" content={data.title} key="ogsitename" />

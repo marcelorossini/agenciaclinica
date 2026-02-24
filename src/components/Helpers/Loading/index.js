@@ -1,10 +1,7 @@
-// NextJS
 import { useRef } from "react";
 
-// Helpers
-import { SpinnerIos } from "styled-icons/fluentui-system-filled";
+import { SpinnerIos } from "@styled-icons/fluentui-system-filled";
 
-// Styles
 import { Container, Wrapper } from "./style";
 
 const Loading = (props) => {

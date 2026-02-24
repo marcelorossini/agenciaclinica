@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useForm, Controller } from "react-hook-form";
@@ -46,15 +45,12 @@ const Cliente = () => {
       try {
         const { data } = await api.get(`/customer/${id}`);
 
-        // Title
         setTitle(data.name);
 
-        // Preenche valores
         Object.keys(data).forEach((item) => {
           setValue(item, data[item]);
         });
 
-        // Preenche imagens
         setImages({
           profileImage: data.profile_image,
           backgroundImage: data.background_image,
@@ -75,9 +71,7 @@ const Cliente = () => {
   const handleOnSubmit = async (data) => {
     try {
       let auxData = data;
-      // Imagem de perfil
       auxData.profile_image = images.profileImage || null;
-      // Imagem fundo
       auxData.background_image = images.backgroundImage || null;
       if (id === "novo") await api.post(`/customer`, auxData);
       else {

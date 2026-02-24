@@ -1,4 +1,3 @@
-// Style
 import { Button } from "./style";
 
 const FloatButton = () => {

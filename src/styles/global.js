@@ -12,6 +12,9 @@ export default createGlobalStyle`
   --color-grey-dark: #444447;     
   --color-grey-light: #e9e9e9;   
   --color-grey-light-hover: #d4d4d4;
+  --color-white: #ffffff;
+  --color-shadow: rgba(0,0,0,0.1);
+  --color-blue-dark: #353b48;
   --size-max-width: 1280px;
   --size-padding-1x: 20px;
 }   

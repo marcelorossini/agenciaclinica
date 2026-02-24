@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -11,7 +10,6 @@ import {
   NavbarItem,
   Logo,
   Footer,
-  Button,
   TextModal,
   InformationTextModal,
 } from "./style";
@@ -74,11 +72,6 @@ export default function Home() {
         <Logo>
           <img src="/assets/logo.svg" alt="logo" />
         </Logo>
-{/*
-        <Button onClick={() => handlePreRegister()}>
-          Faça aqui seu pré-cadastro {isMobile && <br />} para o lançamento!
-        </Button>
-*/}
         <Footer>
           <h1 className="fontSizeSecondary">
             Agência especializada {isMobile && <br />} em profissionais da saúde
@@ -150,3 +143,4 @@ function Modal() {
     </>
   );
 }
+

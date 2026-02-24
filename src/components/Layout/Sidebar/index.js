@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 
-// Style
 import { Container, Username, Logo, List, CloseButton } from "./style";
 import { Close } from "@styled-icons/material";
 
