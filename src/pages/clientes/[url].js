@@ -72,18 +72,17 @@ const Clientes = ({ data }) => {
         <Head>
           <title>{name || "Cliente"} - Agência Clinica</title>
         </Head>
-        <iframe
-          title="Página do cliente"
-          srcDoc={html_page}
+        <div
+          className="cliente-html-page"
+          dangerouslySetInnerHTML={{ __html: html_page }}
           style={{
             position: "fixed",
             top: 0,
             left: 0,
             width: "100%",
             height: "100%",
-            border: "none",
+            overflow: "auto",
           }}
-          sandbox="allow-scripts allow-same-origin allow-forms"
         />
       </>
     );
